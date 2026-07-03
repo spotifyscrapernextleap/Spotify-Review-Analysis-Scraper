@@ -1,0 +1,556 @@
+{
+  "1": {
+    "review_id": "android:us:143dc8ce-f79d-46bd-9d63-1e88f6ac2d6a",
+    "rating": 5,
+    "model_categories": [
+      "audio"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "It gives good sound quality even with downloaded songs my fav music app. The spotify premium price is also vfm"
+  },
+  "2": {
+    "review_id": "android:us:cdca72e9-53be-4b97-adf1-6f658c5b89ea",
+    "rating": 1,
+    "model_categories": [
+      "tech"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "I am having significant trouble logging into my account via Facebook. This is my primary, long-standing account, and I cannot afford to lose years of listening history, Spotify Wrapped data, and the money I’ve invested in my subscription. Please assist me in restoring access immediately, as I would hate for all that time and effort to be lost due to a technical error."
+  },
+  "3": {
+    "review_id": "android:us:5ac1ca26-af5a-47ba-aebc-c564ef31a408",
+    "rating": 5,
+    "model_categories": [
+      "none"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "very capable of listening music and it's very good and you can listen to the music while the phone is closed."
+  },
+  "4": {
+    "review_id": "android:us:3774b61f-3ad4-4551-b32e-0e620698ba1f",
+    "rating": 5,
+    "model_categories": [
+      "discovery"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "I really appreciate the amount of music you guys have (^.^)(^.^)(^.^)(^.^)(^.^)(^_^)v"
+  },
+  "5": {
+    "review_id": "android:us:5f2b9f39-2862-4851-a3fc-6611f2f201cf",
+    "rating": 1,
+    "model_categories": [
+      "pricing"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "if I'm paying why do I have to listen to ads in podcasts or fund morally corrupt causes"
+  },
+  "6": {
+    "review_id": "android:us:2ce1995c-7978-45f6-b917-d36761206dc0",
+    "rating": 1,
+    "model_categories": [
+      "ux"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "very bad app.we can't even choose the music which we want to listen, they will choose it randomly. i hate the app"
+  },
+  "7": {
+    "review_id": "android:us:ac23f9eb-f8c6-4bc6-baf9-94b6b8ef7ea9",
+    "rating": 5,
+    "model_categories": [
+      "audio"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "Quality, loud and clear MUSIC"
+  },
+  "8": {
+    "review_id": "android:us:940ae1a7-fa7e-45d8-82e7-4f374704e1c6",
+    "rating": 3,
+    "model_categories": [
+      "catalogue"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "Okay, here me out. Spotify claims they have lyrics. This is not for all. As a JPOP and KPOP listener, lyrics to those songs do not apply. And if there is, it's either in kanji or hangul. Please make the lyrics to those songs in romaji. Other than that, it's a good app for listening to music. But again, they can't claim they have lyrics. It's one sided, only for songs in english alphabet."
+  },
+  "9": {
+    "review_id": "android:us:f53c0454-bd15-4e47-8bca-d1962ce73a83",
+    "rating": 2,
+    "model_categories": [
+      "pricing"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "tooo many ads"
+  },
+  "10": {
+    "review_id": "android:us:20a67e3e-1e24-4c64-93dd-0df2e22ffe77",
+    "rating": 1,
+    "model_categories": [
+      "catalogue"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "they started to hide explicit context, even when I enabled it so it is disgusting to hear the music now. instead of relax I feel anger and disappointment each time I hear omitted part of the song I feel that I cannot choose my playlist, now I cannot relax with Spotify and will search other song streamings for all my family plan"
+  },
+  "11": {
+    "review_id": "android:us:0a7c290f-d2ea-47dc-b346-2bd9524c9627",
+    "rating": 5,
+    "model_categories": [
+      "none"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "I love Spotify iam writing this and listening songs of Spotify"
+  },
+  "12": {
+    "review_id": "android:us:0047a2c2-c7f9-402a-a0c7-118454b64771",
+    "rating": 3,
+    "model_categories": [
+      "catalogue",
+      "pricing"
+    ],
+    "model_sentiment": "mixed",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "nice to have access to all masterpiece songs but too annoying for ads"
+  },
+  "13": {
+    "review_id": "android:us:ecd6e7cd-adbf-457e-b258-1a6bd039be78",
+    "rating": 1,
+    "model_categories": [
+      "discovery"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "No option to filter out AI generated music."
+  },
+  "14": {
+    "review_id": "android:us:9b29c8e2-1a5a-476e-92cf-0deb6a3a3ed7",
+    "rating": 1,
+    "model_categories": [
+      "tech"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "worst app ever, interruption would irritate as hell 👎🏻"
+  },
+  "15": {
+    "review_id": "android:us:f5d0ae00-81bd-49d7-8b6a-647a2134deb6",
+    "rating": 3,
+    "model_categories": [
+      "tech"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "I think it fell off..."
+  },
+  "16": {
+    "review_id": "android:us:0f775bf5-037d-47b0-b737-c91ea678f0ff",
+    "rating": 5,
+    "model_categories": [
+      "none"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "long_empty",
+    "text": "The top unmatched experience has been available on Spotify for five years now, offering affordability and understanding when it comes to late payments. It's a fact that you can enjoy listening even under challenging circumstances.🥰"
+  },
+  "17": {
+    "review_id": "android:us:d85a741b-318c-4a71-bb5c-eec7fc2899bd",
+    "rating": 4,
+    "model_categories": [
+      "pricing"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "advertisement while choosing songs and sometimes do not allow choosing songs without premium"
+  },
+  "18": {
+    "review_id": "android:us:d8116a30-a55a-4316-ba0e-ecb0c5118163",
+    "rating": 5,
+    "model_categories": [
+      "discovery"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "Awesome recommendation engine👌"
+  },
+  "19": {
+    "review_id": "android:us:bc50e364-7041-4b19-bcac-1ac841464f81",
+    "rating": 1,
+    "model_categories": [
+      "catalogue"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "refuses to play the song I searched for"
+  },
+  "20": {
+    "review_id": "android:us:d43a5b56-134c-4e7e-b2ef-dc684f1c79f9",
+    "rating": 4,
+    "model_categories": [
+      "ux"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "Please, please fix the widget or add another smaller one! I use the widget all the time and the new one is too big and often doesn't even work."
+  },
+  "21": {
+    "review_id": "android:us:a4c42e71-fbed-4d4a-a7a1-70281c7e12d8",
+    "rating": 5,
+    "model_categories": [
+      "pricing"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "A great app needs less ads."
+  },
+  "22": {
+    "review_id": "android:us:f38257ea-f0ad-4ef7-8a3a-af5f90330511",
+    "rating": 2,
+    "model_categories": [
+      "discovery"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "its nice. plays music and ads. like most music apps. but the random songs, not playing in order, 6 skips per hour, etc. pisses me off. ive seen so many reviews like this aswell! and yall still havent fixed the issue. Just fix it already I like Spotify but its getting annoying atp I would like to stick to it but I git SoundCloud as a backup! dont be surprised if ur listeners go down you aren't listening to the constant issue fix it already. it wasnt a good idea in the first place :("
+  },
+  "23": {
+    "review_id": "android:us:9eb98c93-bec8-438b-9403-69cf89963dac",
+    "rating": 1,
+    "model_categories": [
+      "pricing"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "Worst app for songs... Want to keep song in loop? Explore premium.... Want to go back to song? Explore premium... Want to start from middle of the song? Explore premium.... Want to play playlist in order? Explore premium.... Want to skip songs? Explore premium n the next update will b ... \" Want to listen songs? Explore premium \" edit - Now u can't even play the song that u want... cz u should explore premium"
+  },
+  "24": {
+    "review_id": "android:us:f328a1f7-181a-4bd3-b126-8f9e6e0e7d71",
+    "rating": 1,
+    "model_categories": [
+      "updates",
+      "tech"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "The app only works in offline mode in the latest update"
+  },
+  "25": {
+    "review_id": "android:us:e39dfbb0-4b60-488a-a8d9-80457396d5f4",
+    "rating": 1,
+    "model_categories": [
+      "tech"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "Autoplay is not working . I has to toggle Autoplay after I play every song . Please resolve this bug it is disrupting overall experience of listening 🤡"
+  },
+  "26": {
+    "review_id": "android:us:b60ef6c7-b875-414e-a14f-b2714768e2a6",
+    "rating": 5,
+    "model_categories": [
+      "ux"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "Let's me play music when I am not in the app... need I say more?"
+  },
+  "27": {
+    "review_id": "android:us:4e5faded-713c-449b-8f69-f1c5d8dfead3",
+    "rating": 4,
+    "model_categories": [
+      "ux"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "lowk good app but the forced shuffle kinda ruins the vibe sometimes"
+  },
+  "28": {
+    "review_id": "android:us:80b05c05-f434-4125-9cea-d4244c8a31cc",
+    "rating": 4,
+    "model_categories": [
+      "tech"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "lately now Spotify is constantly crashing when in the background"
+  },
+  "29": {
+    "review_id": "android:us:2cf41ddb-ce03-480b-b187-29184c004cd5",
+    "rating": 3,
+    "model_categories": [
+      "pricing"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "good but more ads and bad ads"
+  },
+  "30": {
+    "review_id": "android:us:dedb9289-52c6-412c-8b3e-f95731656438",
+    "rating": 5,
+    "model_categories": [
+      "discovery"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "I love how I can make a playlist of your favorite songs"
+  },
+  "31": {
+    "review_id": "android:us:9d835454-bb10-4df2-b905-c88b70af581a",
+    "rating": 1,
+    "model_categories": [
+      "tech"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "can't open app"
+  },
+  "32": {
+    "review_id": "android:us:843cbca9-8667-488e-8eb4-cea1456452b8",
+    "rating": 1,
+    "model_categories": [
+      "pricing"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "cancelled 4 times still charging me. getting a hold of my bank tomorrow."
+  },
+  "33": {
+    "review_id": "android:us:ea4c4efa-bc09-4820-afb2-64be2ddd7d2e",
+    "rating": 1,
+    "model_categories": [
+      "discovery"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "i cant play the whole song anymore, it sucks"
+  },
+  "34": {
+    "review_id": "android:us:ca0a54bc-9307-4b68-a96f-2bd1d111962a",
+    "rating": 4,
+    "model_categories": [
+      "discovery"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "good songs option but shd release the original song not the remake"
+  },
+  "35": {
+    "review_id": "android:us:8708e7a4-578e-41cb-897c-81f3cdc2c896",
+    "rating": 5,
+    "model_categories": [
+      "discovery"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "very good and knows how to play similar stuff once you pick an artist or song"
+  },
+  "36": {
+    "review_id": "android:us:909f6425-92f0-4717-836a-4ebda467ebd8",
+    "rating": 1,
+    "model_categories": [
+      "updates"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "After latest update I can only play 3-5 seconds of a podcast before it pauses I've tried different podcasts and restarted my phone"
+  },
+  "37": {
+    "review_id": "android:us:79453733-a9e6-44fd-821f-8f89111ce7ba",
+    "rating": 4,
+    "model_categories": [
+      "catalogue"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "almost every song some songs aren't on here"
+  },
+  "38": {
+    "review_id": "android:us:1ae88b83-b57f-48f9-9640-08d8bbec2c41",
+    "rating": 1,
+    "model_categories": [
+      "discovery"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "Smart Shuffle is trash. Let us disable it permanently. EDIT: DJ is also hilariously terrible"
+  },
+  "39": {
+    "review_id": "android:us:b27c0769-51cf-485f-89ea-70988b304d08",
+    "rating": 5,
+    "model_categories": [
+      "audio"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "so good sound quality"
+  },
+  "40": {
+    "review_id": "android:us:003efb44-3509-4f8d-81bb-8de624eeee1d",
+    "rating": 4,
+    "model_categories": [
+      "ux"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "It's good but is a pain to login into when having a family account"
+  },
+  "41": {
+    "review_id": "android:us:acf1f1b6-18f8-43be-b4fa-de1b2c9085b2",
+    "rating": 5,
+    "model_categories": [
+      "none"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "long_empty",
+    "text": "This app helped me have a vibe when playing games, it's so much fun to listen to music while playing games or scrolling through media, 5/5 ratings, I'd love to see this app improved more and have more beautiful updates"
+  },
+  "42": {
+    "review_id": "android:us:3fbe15bb-a827-4231-b317-9151584b11f5",
+    "rating": 2,
+    "model_categories": [
+      "updates",
+      "tech"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "Login in 30 times in day is too much with new update."
+  },
+  "43": {
+    "review_id": "android:us:35c51815-f3d5-43ab-a1fe-fe771501cf3f",
+    "rating": 5,
+    "model_categories": [
+      "ux"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "I love this app.If I want to repeat the songs I can always do it.You can also listen to music when your doing something different on the same device your listening to music.Also you can add you favorite songs on your Playlist."
+  },
+  "44": {
+    "review_id": "android:us:2507de54-117f-4f37-9f47-cce0b419fdac",
+    "rating": 5,
+    "model_categories": [
+      "ux"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "easy to find your favorite songs."
+  },
+  "45": {
+    "review_id": "android:us:17e85c44-d238-4261-a118-55cb6785ee21",
+    "rating": 4,
+    "model_categories": [
+      "pricing"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "without subscribtion but still having fun ."
+  },
+  "46": {
+    "review_id": "android:us:32b22360-9599-433d-a86b-76e0c4b13dfd",
+    "rating": 4,
+    "model_categories": [
+      "audio"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "sound quality could be better"
+  },
+  "47": {
+    "review_id": "android:us:8effd4a7-3809-4451-b7f8-773893299fd3",
+    "rating": 5,
+    "model_categories": [
+      "none"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "long_empty",
+    "text": "It's a no-brainer like honestly. wait what kind of bulldookie do you use if not Spotify? Your...probably single...aren't you. Just kidding, but if you want some traction in the ol relationship dept. Spotify"
+  },
+  "48": {
+    "review_id": "android:us:12ba90da-97da-4030-9d4c-952f4f14d878",
+    "rating": 4,
+    "model_categories": [
+      "tech"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "easy",
+    "text": "Sometimes, whenever I skip a song, that very song would still play for a few seconds. There were also a few times when I would pause a song, only for that song to keep playing for a few seconds. It will do that even if I turn on the Wi-Fi."
+  },
+  "49": {
+    "review_id": "android:us:736b6903-36ec-419f-9696-8f386a5d6808",
+    "rating": 4,
+    "model_categories": [
+      "discovery"
+    ],
+    "model_sentiment": "positive",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "nice music and mix as well"
+  },
+  "50": {
+    "review_id": "android:us:2dd41bfc-c6c7-425e-9732-f24f3922330f",
+    "rating": 1,
+    "model_categories": [
+      "updates",
+      "tech"
+    ],
+    "model_sentiment": "negative",
+    "model_confidence": "high",
+    "borderline_type": "short_substantive",
+    "text": "after update not proper worked"
+  }
+}

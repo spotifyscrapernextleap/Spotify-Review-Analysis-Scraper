@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dashboard",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "phases/phase-8-dashboard", "run", "dev", "--", "--port", "4178", "--strictPort"],
+      "port": 4178
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "1": {
+    "review_id": "ios:us:14210621173",
+    "rating": 4,
+    "country": "us",
+    "model_themes": [
+      "love"
+    ],
+    "model_snippets": [
+      "Very good playlist recommendations"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "Very good playlist recommendations"
+  },
+  "2": {
+    "review_id": "ios:ca:14207909341",
+    "rating": 4,
+    "country": "ca",
+    "model_themes": [
+      "newmusic"
+    ],
+    "model_snippets": [
+      "poor discoverability of new artists"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "Was great has been declining with the tech issues and poor discoverability of new artists. But seems like it’s been getting better recently. Too many ads if you don’t pay to play though. But still accessible to everyone so not that bad.."
+  },
+  "3": {
+    "review_id": "ios:in:14184542410",
+    "rating": 1,
+    "country": "in",
+    "model_themes": [
+      "shuffle"
+    ],
+    "model_snippets": [
+      "shuffle feature unable to turn off or on without premium"
+    ],
+    "model_repetition": "imposed",
+    "coder": "openai/gpt-oss-120b",
+    "text": "now since spotify made the shuffle feature unable to turn off or on without premium spotify has been getting pretty useless. and even when i try to go and pay for premium it just says payments are done outside the app. then where do i go?!?! and to top it off the app glitches so much. every 5 seconds a song will either stop playing suddenly or just kill the app. please fix these issues and maybe more people will use this app more often"
+  },
+  "4": {
+    "review_id": "ios:ca:14183992779",
+    "rating": 1,
+    "country": "ca",
+    "model_themes": [
+      "freegate",
+      "repeat"
+    ],
+    "model_snippets": [
+      "Can’t always choose songs, have to pay or listen to ads",
+      "Songs are too repetitive, playlists are too repetitive"
+    ],
+    "model_repetition": "imposed",
+    "coder": "openai/gpt-oss-120b",
+    "text": "Can’t always choose songs, have to pay or listen to ads, no replaying a song… The old rules for the free version were limiting enough.  \nSongs are too repetitive, playlists are too repetitive, and not imaginative.  Blocking an annoying song only blocks one version of the likely 20-ish or so versions on Spotify. Ya no."
+  },
+  "5": {
+    "review_id": "ios:gb:14182055998",
+    "rating": 5,
+    "country": "gb",
+    "model_themes": [
+      "control"
+    ],
+    "model_snippets": [
+      "comes up with tons of recommendations that I don’t want"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "I love this app you can play whatever music u want and it’s really good  quality u can make playlists as well where I can put ur favourite songs on the only thing they could improve on is maybe they could make it easier to make playlists because when u tap on a singer and then wanna add all their songs when u tap on one of then it comes up with tons of recommendations that I don’t want so it would definitely help to take away the recommendations"
+  },
+  "6": {
+    "review_id": "ios:in:14204195878",
+    "rating": 5,
+    "country": "in",
+    "model_themes": [
+      "love"
+    ],
+    "model_snippets": [
+      "auto queue almost always knows what I am feeling"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "The auto queue almost always knows what I am feeling and plays songs that’s so close to what I need to hear at that moment."
+  },
+  "7": {
+    "review_id": "ios:in:14158896451",
+    "rating": 5,
+    "country": "in",
+    "model_themes": [
+      "love"
+    ],
+    "model_snippets": [
+      "Awesome recommendations"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "Awesome recommendations"
+  },
+  "8": {
+    "review_id": "ios:au:14161430586",
+    "rating": 5,
+    "country": "au",
+    "model_themes": [
+      "smartrec"
+    ],
+    "model_snippets": [
+      "song suggestions could be better"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "Best music app out there do feel like shuffle ai dj and song suggestions could be better but overall great app and good services"
+  },
+  "9": {
+    "review_id": "ios:gb:14179435836",
+    "rating": 2,
+    "country": "gb",
+    "model_themes": [
+      "mismatch"
+    ],
+    "model_snippets": [
+      "songs I have never heard of turn up in my liked lists"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "Don’t like new changes also songs I have never heard of turn up in my liked lists???"
+  },
+  "10": {
+    "review_id": "ios:au:14176255967",
+    "rating": 2,
+    "country": "au",
+    "model_themes": [
+      "pushy"
+    ],
+    "model_snippets": [
+      "unwanted recommendations"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "This app has gone downhill in the last month. The bloat and AI slop is getting out of hand. It feels like this app has been vibe-coded, it literally takes more than 5 seconds to add a song to a playlist. \n\nTrying to give a fair review, I am grateful I get to listen to pretty much every song ever released. But the video podcasts, AI slop, unwanted recommendations, and overall bloat are making me want to switch.\n\nThere is a special place in hell for the person who designed Smart Shuffle."
+  },
+  "11": {
+    "review_id": "ios:au:14184529774",
+    "rating": 5,
+    "country": "au",
+    "model_themes": [
+      "control"
+    ],
+    "model_snippets": [
+      "wish Spotify had a playlist with funk"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "It’s the best music app I wish  Spotify had a playlist with funk"
+  },
+  "12": {
+    "review_id": "ios:gb:14182638315",
+    "rating": 5,
+    "country": "gb",
+    "model_themes": [
+      "control"
+    ],
+    "model_snippets": [
+      "can’t skip halfway through a song"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "Very good, has all my fave creators on it and I can practice my ballet without having to go onto YouTube. Has this weird thing tho where I can’t skip halfway through a song? Like how am I supposed to practice my ballet if I can’t get to the bit which I need to practice without waiting 5 mins. If I restart the app tho it’s fine, might be my end idk."
+  },
+  "13": {
+    "review_id": "ios:us:14212719063",
+    "rating": 2,
+    "country": "us",
+    "model_themes": [
+      "pushy"
+    ],
+    "model_snippets": [
+      "AI music fed into autogenerated playlists"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "Algorithm keeps giving me AI music. Please do something about this scourge. It is becoming incredibly horrific, especially for someone who pays premium and gets AI music fed into autogenerated playlists. Please make clear labels for AI music to be labeled and filtered out if unwanted. Need stronger artist verification tools."
+  },
+  "14": {
+    "review_id": "ios:au:14164939335",
+    "rating": 5,
+    "country": "au",
+    "model_themes": [
+      "dj"
+    ],
+    "model_snippets": [
+      "dj needs to not play sleep music"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "The dj needs to not play sleep music I always say no and it still does"
+  },
+  "15": {
+    "review_id": "ios:au:14169127884",
+    "rating": 5,
+    "country": "au",
+    "model_themes": [
+      "control"
+    ],
+    "model_snippets": [
+      "can only have a limited amount of songs I can choose myself"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "I really hate this update were I can only have a limited amount of songs I can choose myself so when I go to play a song I wanna play it’s says I can’t change this asap cause it is really bad"
+  },
+  "16": {
+    "review_id": "ios:au:14193053951",
+    "rating": 3,
+    "country": "au",
+    "model_themes": [
+      "shuffle",
+      "control"
+    ],
+    "model_snippets": [
+      "IT’S STUCK ON SHUFFLE!",
+      "you can’t even order, delete, control shuffle or not"
+    ],
+    "model_repetition": "imposed",
+    "coder": "openai/gpt-oss-120b",
+    "text": "This used to be my go to music streaming app, but the new “update” has been making me frustrated. I can’t even play my playlist, and it adds some unrelated songs i don’t even listen to (IT’S STUCK ON SHUFFLE!). And wdym you can’t even order, delete, control shuffle or not, and you have to pay for it now. Please fix this."
+  },
+  "17": {
+    "review_id": "ios:au:14197664026",
+    "rating": 5,
+    "country": "au",
+    "model_themes": [
+      "freegate"
+    ],
+    "model_snippets": [
+      "Please make it more daily skipssss"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "Please make it more daily skipssss"
+  },
+  "18": {
+    "review_id": "ios:ca:14194314847",
+    "rating": 1,
+    "country": "ca",
+    "model_themes": [
+      "freegate"
+    ],
+    "model_snippets": [
+      "you cant skip songs too many times"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "you cant skip songs too many times or else it doesn’t let you skip anymore and there are too many ads what have you done to Spotify bring it back to what it used to be You destroyed Spotify you shouldn’t have changed it"
+  },
+  "19": {
+    "review_id": "ios:gb:14176898708",
+    "rating": 5,
+    "country": "gb",
+    "model_themes": [
+      "smartrec"
+    ],
+    "model_snippets": [
+      "listen to mixes like on SoundCloud"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "It’s Spotify, you know it already. Only wish is I could listen to mixes like on SoundCloud 🤔😌"
+  },
+  "20": {
+    "review_id": "ios:au:14207992556",
+    "rating": 4,
+    "country": "au",
+    "model_themes": [
+      "mismatch",
+      "love"
+    ],
+    "model_snippets": [
+      "recommend me really random songs from genres that I have never listened to",
+      "love their Spotify wrapped"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "I’ve rated Spotify before and previously gave it 5 stars. However, there is one thing I would like to mention that lowers its rating. The algorithm that recommends music to you is not great. I don’t know if it’s a cost issue or just that the algorithm isn’t great but it will recommend me really random songs from genres that I have never listened to in my life. I’m not against broadening my music taste however it becomes frustrating when you want to listen to a specific music genre and all it recommends are genres you have no care for. All that being said it is a genuinely good app and despite popular opinion, I personally love their Spotify wrapped. I recommend people to download this app because it genuinely is worth it. If you do not have Spotify premium the adds can be bothersome however there are other options like a family plan that are cheaper than Spotify premium that get rid of the ads. Overall it’s a great app and a worthwhile investment!!"
+  },
+  "21": {
+    "review_id": "ios:us:14214735881",
+    "rating": 2,
+    "country": "us",
+    "model_themes": [
+      "repeat"
+    ],
+    "model_snippets": [
+      "plays the same songs everyday"
+    ],
+    "model_repetition": "imposed",
+    "coder": "openai/gpt-oss-120b",
+    "text": "Repetitive asf plays the same songs everyday damn day"
+  },
+  "22": {
+    "review_id": "ios:ca:14188141953",
+    "rating": 2,
+    "country": "ca",
+    "model_themes": [
+      "shuffle",
+      "repeat"
+    ],
+    "model_snippets": [
+      "Shuffle plays the same songs over and over",
+      "Shuffle plays the same songs over and over"
+    ],
+    "model_repetition": "imposed",
+    "coder": "openai/gpt-oss-120b",
+    "text": "Shuffle plays the same songs over and over I like Britney and three days grace but that isn’t all i want to listen too with over 2500+ songs Britney and Three Days Grace aren’t the only ones on my play list and they have more then 3 songs too 🙄"
+  },
+  "23": {
+    "review_id": "ios:us:14214669747",
+    "rating": 4,
+    "country": "us",
+    "model_themes": [
+      "mismatch"
+    ],
+    "model_snippets": [
+      "takes you to recommended music"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "Spotify is a great app to listen and enjoy. Ads are annoying and when u play a playlist it sometimes takes you to recommended music and it’s frustrating. Overall a good music app for many music lovers."
+  },
+  "24": {
+    "review_id": "ios:ca:14195060095",
+    "rating": 1,
+    "country": "ca",
+    "model_themes": [
+      "repeat",
+      "shuffle"
+    ],
+    "model_snippets": [
+      "same damn song sequence ON SHUFFLE two days in a row",
+      "Fix the shuffle sequence"
+    ],
+    "model_repetition": "imposed",
+    "coder": "openai/gpt-oss-120b",
+    "text": "Fix the shuffle sequence. I shouldn’t hear the same damn song sequence ON SHUFFLE two days in a row\n\nFIX shuffle. I don’t want to hear only popular songs. Fix it! Or I’m going back to Apple Music"
+  },
+  "25": {
+    "review_id": "ios:us:14214720076",
+    "rating": 3,
+    "country": "us",
+    "model_themes": [
+      "mismatch"
+    ],
+    "model_snippets": [
+      "gives you suggested songs"
+    ],
+    "model_repetition": null,
+    "coder": "openai/gpt-oss-120b",
+    "text": "I like Spotify as a music app, but I have a few suggestions. First of all, premium. I get having ads, but they have too many. I get four ads after a few songs, which gets really annoying. But the biggest thing is when you have only a few songs in a playlist, it gives you suggested songs. I put my songs in my playlist for a reason, so play them please. I will have to watch 4 ads to hear a song that’s suggested that I don’t even know or like. Other than that it’s fine I guess I just wish it was better for non premium users"
+  }
+}

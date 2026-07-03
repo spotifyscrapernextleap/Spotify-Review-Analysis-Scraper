@@ -1,0 +1,316 @@
+{
+  "n_scored": 48,
+  "themeAccuracy_exactSet": 20.8,
+  "themeAccuracy_overlap": 72.9,
+  "primaryThemeAccuracy": 39.6,
+  "kappa_primary": 0.332,
+  "repetitionTypeAgreement": {
+    "n": 5,
+    "agreement": 100.0
+  },
+  "perThemeAccuracy": {
+    "control": {
+      "acc": 66.7,
+      "n": 3
+    },
+    "dj": {
+      "acc": 50.0,
+      "n": 2
+    },
+    "emerging": {
+      "acc": 33.3,
+      "n": 3
+    },
+    "freegate": {
+      "acc": 50.0,
+      "n": 8
+    },
+    "love": {
+      "acc": 33.3,
+      "n": 6
+    },
+    "mismatch": {
+      "acc": 50.0,
+      "n": 6
+    },
+    "newmusic": {
+      "acc": 0.0,
+      "n": 2
+    },
+    "pushy": {
+      "acc": 40.0,
+      "n": 5
+    },
+    "repeat": {
+      "acc": 20.0,
+      "n": 5
+    },
+    "shuffle": {
+      "acc": 37.5,
+      "n": 8
+    }
+  },
+  "confusion": {
+    "labels": [
+      "repeat",
+      "shuffle",
+      "autoplay",
+      "safe",
+      "mismatch",
+      "pushy",
+      "control",
+      "freegate",
+      "dj",
+      "newmusic",
+      "love",
+      "emerging"
+    ],
+    "matrix_counts": [
+      [
+        1,
+        1,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        3,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        4,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    ]
+  },
+  "freegateControlBoundary": {
+    "user_freegate_modelSaid": {
+      "control": 6,
+      "freegate": 7,
+      "pushy": 1,
+      "love": 2,
+      "shuffle": 1,
+      "mismatch": 1
+    },
+    "user_control_modelSaid": {
+      "control": 7,
+      "freegate": 1,
+      "mismatch": 1,
+      "dj": 1,
+      "autoplay": 2,
+      "love": 1,
+      "pushy": 1,
+      "shuffle": 1
+    }
+  },
+  "codebookGaps_flagged": [
+    {
+      "gold_id": "7",
+      "missing": "recommendation/suggestion: new feature or ui suggestion",
+      "user": "pushy, dj, emerging, mismatch, love",
+      "text": "2026: The prompting feature is a nice touch. But the constant podcasts i have no interest in on my Home page is annoying. DJ plays the same songs repeatedly and"
+    },
+    {
+      "gold_id": "8",
+      "missing": "cross category content",
+      "user": "pushy, dj, emerging",
+      "text": "Recent update seems to have put a nice long ugly search bar for ai dj feature which I'm pretty sure no one I know uses ever, please get rid of this, it is only "
+    },
+    {
+      "gold_id": "16",
+      "missing": "tailoredrecs: song recommendation should be more personalised",
+      "user": "newmusic, emerging",
+      "text": "It should suggest more songs, according to our taste or liked songs"
+    },
+    {
+      "gold_id": "42",
+      "missing": "recommendation/suggestion",
+      "user": "emerging",
+      "text": "Please add a new feature like \"My Vibe\" on Yandex Music for smarter recommendations. Would be much appreciated. And lyrics are missing for so many Uzbek songs"
+    },
+    {
+      "gold_id": "46",
+      "missing": "inconsistent artist availability , complaint against AI features",
+      "user": "emerging",
+      "text": "all in all its good but tale the a.i. away and it be the best platform plus stop miscommunication with artist cus I get tired of having to go and find them on A"
+    },
+    {
+      "gold_id": "49",
+      "missing": "recommendation/suggestion",
+      "user": "emerging",
+      "text": "In full page track view it seems overdue that users be able to simply tap any of the listed artists to be directed to their respective \"page.\". Since the beginn"
+    }
+  ],
+  "notDiscovery_userFlagged": [
+    {
+      "gold_id": "31",
+      "user_raw": "NA",
+      "model_themes": [
+        "shuffle",
+        "repeat"
+      ],
+      "text": "1) ich habe über 1000 Songs in meinen \"liked songs\". Wenn ich auf shuffle stelle kommen trotzdem nur Lieder welche ich dieses Jahr hinzugefügt habe, t"
+    },
+    {
+      "gold_id": "37",
+      "user_raw": "tech error",
+      "model_themes": [
+        "autoplay"
+      ],
+      "text": "I had to give it two stars because if I clicked on another song, another song came out, it wasn't satisfactory."
+    }
+  ]
+}

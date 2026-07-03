@@ -1,0 +1,27 @@
+{"id": "g01", "text": "I keep getting the same 20 songs in every playlist. Discover Weekly hasn't surprised me in months — it just recycles my existing library instead of finding anything new.", "disposition": "tierA", "category_hint": "discovery", "note": "rich, deep-codeable discovery complaint"}
+{"id": "g02", "text": "Shuffle on a 500 song playlist plays the same 10 tracks every time. It is clearly not random and there is no way to fix it.", "disposition": "tierA", "category_hint": "discovery", "note": "repetition / shuffle"}
+{"id": "g03", "text": "The app crashes every time I skip more than 3 songs on my iPhone since the last update. Completely unusable on cellular.", "disposition": "tierA", "category_hint": "playback", "note": "clear technical claim"}
+{"id": "g04", "text": "Premium price went up again but I still get the same buggy experience and no lossless audio in my country.", "disposition": "tierA", "category_hint": "pricing", "note": "pricing + multi-issue"}
+{"id": "g05", "text": "Sound quality dropped to 96kbps even on premium, sounds muffled compared to before.", "disposition": "tierA", "category_hint": "audio", "note": "audio quality, specific"}
+{"id": "g06", "text": "Half my favourite artists' albums are missing or greyed out in the UK store.", "disposition": "tierA", "category_hint": "catalogue", "note": "catalogue availability"}
+{"id": "g07", "text": "Recs don't match my taste at all.", "disposition": "tierB", "category_hint": "discovery", "note": "thin but categorisable"}
+{"id": "g08", "text": "Too many ads between songs.", "disposition": "tierB", "category_hint": "pricing", "note": "thin, account/pricing"}
+{"id": "g09", "text": "Keeps crashing.", "disposition": "tierB", "category_hint": "playback", "note": "thin, codeable"}
+{"id": "g10", "text": "Can't find half the songs I want.", "disposition": "tierB", "category_hint": "catalogue", "note": "thin catalogue"}
+{"id": "g11", "text": "shuffle isn't random, repeats songs", "disposition": "tierB", "category_hint": "discovery", "note": "SHORT-BUT-SUBSTANTIVE: codeable in 6 words, must KEEP"}
+{"id": "g12", "text": "no sleep timer on android", "disposition": "tierB", "category_hint": "ux", "note": "short but a concrete missing-feature claim"}
+{"id": "g13", "text": "I have been using this app for many many years now and honestly I have a lot of feelings about it, sometimes I am happy and sometimes I am not, it really depends on the day and my mood and what is going on in my life, anyway just wanted to share my thoughts here.", "disposition": "tierC", "category_hint": null, "note": "LONG-BUT-EMPTY: many words, no codeable claim -> contentless"}
+{"id": "g14", "text": "good", "disposition": "tierC", "category_hint": null, "note": "single sentiment word, no claim; star retained"}
+{"id": "g15", "text": "best app ever", "disposition": "tierC", "category_hint": null, "note": "praise with no codeable claim"}
+{"id": "g16", "text": "trash", "disposition": "tierC", "category_hint": null, "note": "single sentiment word"}
+{"id": "g17", "text": "Love it", "disposition": "tierC", "category_hint": null, "note": "contentless positive"}
+{"id": "g18", "text": "👍👍👍", "disposition": "tierC", "category_hint": null, "note": "emoji-only junk -> Tier C"}
+{"id": "g19", "text": "🔥🔥🔥🔥", "disposition": "tierC", "category_hint": null, "note": "emoji-only junk"}
+{"id": "g20", "text": "aaaaaaaaaaaaaaaa", "disposition": "tierC", "category_hint": null, "note": "repeated-character string"}
+{"id": "g21", "text": "Get FREE followers and premium at bit.ly/xyz123 visit now!!!", "disposition": "tierC", "category_hint": null, "note": "spam / url -> contentless junk"}
+{"id": "g22", "text": "La aplicación es muy buena pero las recomendaciones no son variadas y siempre repiten lo mismo.", "disposition": "drop_nonenglish", "category_hint": null, "note": "Spanish -> language filter drops"}
+{"id": "g23", "text": "音楽の推薦がいつも同じで、新しい曲が見つかりません。", "disposition": "drop_nonenglish", "category_hint": null, "note": "Japanese -> dropped"}
+{"id": "g24", "text": "Bro the recs are so mid, same gaane baar baar — pls fix the algorithm yaar", "disposition": "tierB", "category_hint": "discovery", "note": "HINGLISH code-switch: Latin script, English-parseable intent -> KEEP (false-keep probe, EC-8)"}
+{"id": "g25", "text": "fr fr this app lowkey ass now 💀 recs are mid af, same songs on loop no cap", "disposition": "tierB", "category_hint": "discovery", "note": "heavy slang + emoji but English+codeable -> KEEP (false-drop probe, EC-8)"}
+{"id": "g26", "text": "Shuffle plays the same 5 songs out of a 200 song playlist every single time.", "disposition": "tierA", "category_hint": "discovery", "note": "dedupe anchor: ORIGINAL kept"}
+{"id": "g27", "text": "Shuffle plays the same 5 songs out of a 200-song playlist, every single time!!", "disposition": "drop_dupe", "category_hint": null, "note": "near-duplicate of g26 -> removed by dedupe"}

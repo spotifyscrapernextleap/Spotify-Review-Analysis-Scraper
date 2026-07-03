@@ -1,0 +1,1788 @@
+{
+  "funnel": {
+    "collected": 387086,
+    "deduplicated": 129018,
+    "english": 124597,
+    "substantiveCensus": 96822,
+    "sampled": 23508,
+    "contentBearing": 13248,
+    "tierA": 23423,
+    "tierB": 31141,
+    "tierC": 70033,
+    "substantive": 54564,
+    "discoveryAll": 9716,
+    "deepCoded": 1462
+  },
+  "window": {
+    "collection": "Dec 2025 - Jun 2026",
+    "analysis": "Dec 2025 - Jun 2026",
+    "appUpdates": 21,
+    "justification": "Android census over 7 calendar months (Dec 2025 - Jun 2026); 124,597 English reviews spanning 21 distinct app-version cycles. Census-scraped in full (not a sorted slice), so monthly volume and star averages are exact and month-stratified LLM sampling is valid. iOS is reported separately as a current snapshot (store feed exposes only ~2-3 weeks)."
+  },
+  "baseline": {
+    "totalReviews": 124597,
+    "avgRating": 3.78,
+    "distribution": [
+      {
+        "stars": 1,
+        "pct": 21.9,
+        "count": 27279
+      },
+      {
+        "stars": 2,
+        "pct": 4.8,
+        "count": 6007
+      },
+      {
+        "stars": 3,
+        "pct": 5.3,
+        "count": 6587
+      },
+      {
+        "stars": 4,
+        "pct": 9.6,
+        "count": 11967
+      },
+      {
+        "stars": 5,
+        "pct": 58.4,
+        "count": 72757
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "pricing",
+      "name": "Pricing / Account / Ads",
+      "count": 28794,
+      "sampleCount": 6991,
+      "pct": 52.8,
+      "avgRating": 2.36,
+      "color": "#F5A623"
+    },
+    {
+      "id": "tech",
+      "name": "Tech / Reliability",
+      "count": 10210,
+      "sampleCount": 2479,
+      "pct": 18.7,
+      "avgRating": 1.97,
+      "color": "#E5484D"
+    },
+    {
+      "id": "discovery",
+      "name": "Discovery & Recs",
+      "count": 9716,
+      "sampleCount": 2359,
+      "pct": 17.8,
+      "avgRating": 3.35,
+      "color": "#1DB954"
+    },
+    {
+      "id": "ux",
+      "name": "UX / Navigation",
+      "count": 6433,
+      "sampleCount": 1562,
+      "pct": 11.8,
+      "avgRating": 2.89,
+      "color": "#3E63DD"
+    },
+    {
+      "id": "updates",
+      "name": "App Updates",
+      "count": 3357,
+      "sampleCount": 815,
+      "pct": 6.2,
+      "avgRating": 2.18,
+      "color": "#D29922"
+    },
+    {
+      "id": "catalogue",
+      "name": "Catalogue / Availability",
+      "count": 2710,
+      "sampleCount": 658,
+      "pct": 5.0,
+      "avgRating": 3.35,
+      "color": "#8E4EC6"
+    },
+    {
+      "id": "audio",
+      "name": "Audio Quality",
+      "count": 2315,
+      "sampleCount": 562,
+      "pct": 4.2,
+      "avgRating": 4.2,
+      "color": "#12A594"
+    },
+    {
+      "id": "other",
+      "name": "Other / Multiple",
+      "count": 527,
+      "sampleCount": 128,
+      "pct": 1.0,
+      "avgRating": 3.4,
+      "color": "#6B7280"
+    }
+  ],
+  "effect": {
+    "gap": -0.43,
+    "ciLow": -0.5,
+    "ciHigh": -0.36,
+    "note": "Discovery reviews rate 0.43 stars below the all-reviews census baseline (95% CI excludes zero). The gap is real but far smaller than the mock's -0.8: discovery is below the baseline yet *less* negative than the average complaint (codeable avg 2.65), so it is a mid-sized, not catastrophic, problem."
+  },
+  "trends": [
+    {
+      "month": "Dec",
+      "reviews": 5345,
+      "discoveryPct": 17.8
+    },
+    {
+      "month": "Jan",
+      "reviews": 20797,
+      "discoveryPct": 20.4
+    },
+    {
+      "month": "Feb",
+      "reviews": 17831,
+      "discoveryPct": 17.6
+    },
+    {
+      "month": "Mar",
+      "reviews": 20579,
+      "discoveryPct": 17.0
+    },
+    {
+      "month": "Apr",
+      "reviews": 19545,
+      "discoveryPct": 19.3
+    },
+    {
+      "month": "May",
+      "reviews": 23205,
+      "discoveryPct": 16.6
+    },
+    {
+      "month": "Jun",
+      "reviews": 17295,
+      "discoveryPct": 16.3
+    }
+  ],
+  "trendDirection": {
+    "label": "Flat",
+    "summary": "Discovery share of voice holds in a 16 to 20% band across the 6-month collection window, with no rising or falling trend."
+  },
+  "discovery": {
+    "totalMentions": 9716,
+    "deepCoded": 1462,
+    "sampleN": 2359,
+    "avgRating": 3.35,
+    "effectSize": -0.43,
+    "themes": [
+      {
+        "id": "repeat",
+        "name": "Same songs on repeat",
+        "count": 186,
+        "pct": 12.7,
+        "sentiment": 2.14,
+        "group": "repetition"
+      },
+      {
+        "id": "shuffle",
+        "name": "Shuffle isn't random",
+        "count": 168,
+        "pct": 11.5,
+        "sentiment": 2.11,
+        "group": "repetition"
+      },
+      {
+        "id": "mismatch",
+        "name": "Irrelevant / wrong recs",
+        "count": 113,
+        "pct": 7.7,
+        "sentiment": 2.04,
+        "group": "relevance"
+      },
+      {
+        "id": "pushy",
+        "name": "Unwanted recs pushed",
+        "count": 42,
+        "pct": 2.9,
+        "sentiment": 1.74,
+        "group": "relevance"
+      },
+      {
+        "id": "smartrec",
+        "name": "Wants smarter / personalized recs",
+        "count": 47,
+        "pct": 3.2,
+        "sentiment": 3.47,
+        "group": "relevance"
+      },
+      {
+        "id": "control",
+        "name": "No control over recs",
+        "count": 394,
+        "pct": 26.9,
+        "sentiment": 2.07,
+        "group": "features"
+      },
+      {
+        "id": "freegate",
+        "name": "Free tier blocks discovery",
+        "count": 153,
+        "pct": 10.5,
+        "sentiment": 2.37,
+        "group": "features"
+      },
+      {
+        "id": "dj",
+        "name": "AI DJ problems",
+        "count": 34,
+        "pct": 2.3,
+        "sentiment": 3.21,
+        "group": "features"
+      },
+      {
+        "id": "newmusic",
+        "name": "Can't surface new releases",
+        "count": 29,
+        "pct": 2.0,
+        "sentiment": 2.28,
+        "group": "features"
+      },
+      {
+        "id": "love",
+        "name": "Discovery that delights",
+        "count": 345,
+        "pct": 23.6,
+        "sentiment": 4.86,
+        "group": "positive"
+      }
+    ],
+    "repetitionCluster": {
+      "themeIds": [
+        "repeat",
+        "shuffle"
+      ],
+      "totalCount": 344,
+      "pctOfDiscovery": 23.5
+    }
+  },
+  "buckets": {
+    "finding": {
+      "ids": [
+        "control",
+        "newmusic",
+        "dj",
+        "freegate"
+      ],
+      "emerging": 0
+    },
+    "recs": {
+      "ids": [
+        "smartrec",
+        "mismatch",
+        "pushy"
+      ],
+      "emerging": 0
+    }
+  },
+  "bridge": {
+    "total": 344,
+    "chosen": {
+      "total": 1,
+      "label": "CHOSEN repetition",
+      "sub": "A need, not a fault",
+      "flowsTo": "Flows into unmet needs",
+      "items": [
+        {
+          "name": "Same songs on repeat",
+          "count": 1
+        }
+      ]
+    },
+    "imposed": {
+      "total": 315,
+      "label": "IMPOSED repetition",
+      "sub": "A control or discovery failure",
+      "flowsTo": "Flows into Buckets 2 and 3",
+      "items": [
+        {
+          "name": "Same songs on repeat",
+          "count": 185
+        },
+        {
+          "name": "Shuffle isn't random",
+          "count": 140
+        }
+      ]
+    }
+  },
+  "behaviors": [
+    {
+      "name": "Commute / Driving",
+      "mentions": 8
+    },
+    {
+      "name": "Focus / Study",
+      "mentions": 5
+    },
+    {
+      "name": "Background / Chores",
+      "mentions": 4
+    },
+    {
+      "name": "Sleep",
+      "mentions": 2
+    },
+    {
+      "name": "Workout",
+      "mentions": 1
+    },
+    {
+      "name": "Mood",
+      "mentions": 1
+    }
+  ],
+  "unmetNeeds": [
+    {
+      "need": "Play the exact song I choose (not a forced alternative)",
+      "mentions": 394,
+      "strength": "strong"
+    },
+    {
+      "need": "Turn off forced / non-random shuffle",
+      "mentions": 168,
+      "strength": "strong"
+    },
+    {
+      "need": "Basic choice without a Premium paywall",
+      "mentions": 153,
+      "strength": "strong"
+    },
+    {
+      "need": "Smarter, more personalised recommendations",
+      "mentions": 47,
+      "strength": "moderate"
+    },
+    {
+      "need": "Keep recommendations out of my own playlists",
+      "mentions": 42,
+      "strength": "moderate"
+    },
+    {
+      "need": "Surface genuinely new releases, not the same rotation",
+      "mentions": 29,
+      "strength": "emerging"
+    }
+  ],
+  "segments": [
+    {
+      "name": "Commute / Driving",
+      "size": 1,
+      "topTheme": "Control / forced playback",
+      "avgRating": 2.25,
+      "discoveryPct": 100
+    },
+    {
+      "name": "Focus / Study",
+      "size": 1,
+      "topTheme": "Control / forced playback",
+      "avgRating": 4.2,
+      "discoveryPct": 100
+    },
+    {
+      "name": "Background / Chores",
+      "size": 1,
+      "topTheme": "Control / forced playback",
+      "avgRating": 3.25,
+      "discoveryPct": 100
+    },
+    {
+      "name": "Sleep",
+      "size": 1,
+      "topTheme": "Control / forced playback",
+      "avgRating": 3.0,
+      "discoveryPct": 100
+    },
+    {
+      "name": "Workout",
+      "size": 1,
+      "topTheme": "Control / forced playback",
+      "avgRating": 5.0,
+      "discoveryPct": 100
+    },
+    {
+      "name": "Mood",
+      "size": 1,
+      "topTheme": "Control / forced playback",
+      "avgRating": 1.0,
+      "discoveryPct": 100
+    }
+  ],
+  "delight": {
+    "positiveShare": 17.4,
+    "positiveCount": 9494,
+    "byCategory": [
+      {
+        "name": "Discovery & Recs",
+        "pct": 40.8
+      },
+      {
+        "name": "Catalogue / Availability",
+        "pct": 28.3
+      },
+      {
+        "name": "Audio Quality",
+        "pct": 68.7
+      },
+      {
+        "name": "Other / Multiple",
+        "pct": 54.7
+      }
+    ],
+    "topThemes": [
+      {
+        "name": "Discovery that delights (recs, Discover Weekly, Wrapped)",
+        "count": 345
+      },
+      {
+        "name": "Great catalogue / found what I wanted",
+        "count": 658
+      },
+      {
+        "name": "Audio quality praise",
+        "count": 562
+      }
+    ]
+  },
+  "sentimentSplit": [
+    {
+      "id": "pricing",
+      "name": "Pricing / Account / Ads",
+      "pos": 6.6,
+      "neg": 89.1
+    },
+    {
+      "id": "tech",
+      "name": "Tech / Reliability",
+      "pos": 2.6,
+      "neg": 95.6
+    },
+    {
+      "id": "discovery",
+      "name": "Discovery & Recs",
+      "pos": 40.8,
+      "neg": 52.4
+    },
+    {
+      "id": "ux",
+      "name": "UX / Navigation",
+      "pos": 21.8,
+      "neg": 71.9
+    },
+    {
+      "id": "updates",
+      "name": "App Updates",
+      "pos": 9.3,
+      "neg": 87.9
+    },
+    {
+      "id": "catalogue",
+      "name": "Catalogue / Availability",
+      "pos": 28.3,
+      "neg": 65.7
+    },
+    {
+      "id": "audio",
+      "name": "Audio Quality",
+      "pos": 68.7,
+      "neg": 24.9
+    },
+    {
+      "id": "other",
+      "name": "Other / Multiple",
+      "pos": 54.7,
+      "neg": 39.1
+    }
+  ],
+  "positiveDiscoveryThemes": [
+    {
+      "name": "Recommendations",
+      "count": 45
+    },
+    {
+      "name": "Discover Weekly",
+      "count": 22
+    },
+    {
+      "name": "New Music",
+      "count": 17
+    },
+    {
+      "name": "AI DJ",
+      "count": 15
+    },
+    {
+      "name": "Wrapped",
+      "count": 13
+    },
+    {
+      "name": "Smart Shuffle",
+      "count": 11
+    }
+  ],
+  "quotes": {
+    "repeat": [
+      {
+        "text": "I just remember the old Spotify that I could choose whatever song I wanted and sometimes get ads without premium and not get 6 skips before I have to deal with whatever I'm listing to it just feels like a shell if it's former self oh yeah last but not least I didn't have to have ",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": [
+          "No control over recs",
+          "Shuffle isn't random"
+        ]
+      },
+      {
+        "text": "Id give it five, but sometimes this thing repeats the same sht over and over thousands of songs, saved but it still wants to play the same sht",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "the only thing that is not good is repeating your music and not recommending good music, like, the just use the ai to select Playlist and not a personalized music taste by the music that you hear (On any aspect) so feels like empty if you try to find good music",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I have been using Spotify for about 4 or 5 months now, and each time I use it, its worse. more ai songs and way worse recommendations. when I put music on shuffle it repeats songs in the Playlist over and over again despite the thousands of songs in my library. it glitches out a ",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "The app keeps playing the same episode of music or a podcast over and over again. This is after I've listened to it. I can't seem to stop it. It's very frustrating, especially when I'm walking, driving, or listening in the background. I have deleted the app and re-added it. I hav",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "plays music well, and has a very wide variety of music. after a while \"made for you\" playlists seem to have all the same songs on them. I HATE all the UI changes (\"smart shuffle\", new + button where library button used to be is the worst update). changed to 1 star based on the wa",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Too much ads now. They had best of class song recommendation system but now it just repeats the same song I had listened to in the past.",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "honestly I like the majority of the app. cons are the price and the shuffle, which repeats the same songs even after clearing the cache.",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I wish I could dislike songs so they would stop playing. Those ones play way too often.",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Recommendation Algo just sucks now, tracks already in my playlist repeated over and over, pervasive AI generated tracks being force fed in daily mixes. No new music discovery and mis characterising track genres. *Paranoid by Black Sabbath isn't Technical Death Metal*. Been a prem",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": [
+          "Can't surface new releases",
+          "Irrelevant / wrong recs"
+        ]
+      }
+    ],
+    "shuffle": [
+      {
+        "text": "shuffling is very very bad",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "good app but wish they fix the shuffle option as when I play my liked songs some of the songs always comes while some other songs don't play at all",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I don't like the smart shuffle...keeps me from listening to my specific songs ... and I can't go back (plus I don't plan on getting premium)",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I just remember the old Spotify that I could choose whatever song I wanted and sometimes get ads without premium and not get 6 skips before I have to deal with whatever I'm listing to it just feels like a shell if it's former self oh yeah last but not least I didn't have to have ",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": [
+          "No control over recs",
+          "Same songs on repeat"
+        ]
+      },
+      {
+        "text": "It's good but when on shuffle, it plays the same ones twice but not even playing them all shuffled, it'll play one of the songs twice or more, and it keeps stopping and automatically turning off my \"run in background\" settings option.",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "the app is good for listening to music i ha e used it for years only problem is the ads to many at once and the shuffle when u look up a song there is a chance it's not the song u pick",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Worst music app ever, once this was the best one, but now it has became the worst, and the most hated one. You can't even play the song, which you want, it will play randomly anyone, not even randomly from the playlist, just any, and the suffle, named smart suffle is just a way t",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "smart shuffle is trash",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "its pretty good for daily listening but there's still some things that I my self don't like. example is the playlist is not random like if I compare it to YouTube music ytm basically won. because everytime I open the app the first thing that appears is random music but it's conne",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "learn how to shuffle your music I have almost 8000 songs and you guys can't seem to grasp the concept it makes having all that music pointless nobody wants messaging focus on the music smh",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      }
+    ],
+    "mismatch": [
+      {
+        "text": "songs playing algorithm is very very poor it play the songs according to my history all time but not which type of song I m playing now",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "when I wanna listen pop music or diff. at that they paly only bhakti song,I skip many times but all are bhakti or different , from search list I play song they play all songs related to search or bhakti songs .😡😡😡💥👺👺👺👺",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "The suggestions are random and really poor. Is there really so much AI music? no new good Features.. all in all any other Music streaming is better! Thanks for nothing to the company.",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Weird algorithm. Will play a death metal song right after a Christmas request.",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I've been using the for about a year. The app is generally good but the recommendations are terrible. Ive dropped my rating to 1 because they replaced the normal widget with\"dive into your year\" apparently the only way to get rid of it is to actually go and interact with the play",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "The top songs in the playlist liked songs don't get played no matter the device or account. They although work when searched but this seems intentional and annoying. Please fix this",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "ok so I have 56 songs around maybe 3-4 hours on my playlist it's made of many different songs and when I press the play button you know what it does, it plays so.ething from the what we added section first of all there shouldn't be a what we added section on MY playlist I don't w",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Recommendation Algo just sucks now, tracks already in my playlist repeated over and over, pervasive AI generated tracks being force fed in daily mixes. No new music discovery and mis characterising track genres. *Paranoid by Black Sabbath isn't Technical Death Metal*. Been a prem",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": [
+          "Same songs on repeat",
+          "Can't surface new releases"
+        ]
+      },
+      {
+        "text": "bad recommendations in comparison with Yandex music",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "You recommend songs that don't belong to the artists I usually listen to. I don't think my algorithm isn't that obvious.",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      }
+    ],
+    "pushy": [
+      {
+        "text": "stop with the ai songs!!",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "It is full of Artificial Intelligence music now. The discover and release are unusable if you don't want to listen to AI music (or maybe you just want to listen to an artist). Spotify should show clearly when music is generated by AI and add an option to block all AI generated to",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Smuggled three Cardi B songs into my playlist within an hour!! And the kicker is, I hit “don’t recommend this again” on every single one. Spotify has seriously turned into Payola’s own hired gun. Trash 🗑️🗑️🗑️",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "No where in my playlists is Badbunny, nor are they close to the type of music I listen to, but Spotify keeps pushing them on me with DJ X. I skip them every time, but am getting tired of them being pushed on me. Kid Rock is in my playlists, and the type of music I listen to, but ",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Overflowing with AI slop. Any randomly curated playlists having song after song that's generated by AI. I've had to block three \"artists\" in a row before giving up and picking on of my own self made playlists. There needs to be a mechanism in place to omit AI generated content fr",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "canceling my subscription bcz of the ai dj.",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "perfect except for when it gives you songs based on your interests when listening to a playlist",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "no way to filter out AI music",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Pushes alot of music or podcasts that are completely unrelated to my interests. Too many AI bands. Update, still bad, worse even. Half the podcasts don't even play when selected. Can't stop podcasts I have zero interest in filling up the home screen. This is how to ruin a product",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Please stop inserting AI generated music into my radio feed. Starting to consider other options for music.",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      }
+    ],
+    "smartrec": [
+      {
+        "text": "its great i think you should add mixtapes by djs from YouTube",
+        "rating": 4,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "It would be great if you could add an AI to generate custom playlists for me or recommend more songs according to my taste. something like smart shuffle but better. even if you add it for premium users only. would make more people buy premium in my humble opinion. just adds more ",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Wonderful app with all the best songs. Easy to navigate and you get to create numerous playlists. Smooth premium experience without exorbitant costs. Still trying to use the new mix feature which needs some improvement.",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Good so far. I wish it played more based on my listening and less on needing specific choices. Like Pandora did.",
+        "rating": 5,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I love making my own playlists. I wish the recommended music was as eclectic as my listening habits, and that there was more than the album title shown (e.g. genre). I also think audiobooks are overpriced.",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "i want to hear a better playlist based on what's the first song i heard",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "great app for real but pls let smart shuffle be available to premium users",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Changing my review because the app is EVEN WORSE than it used to be. Everything I complained about before never got fixed or even addressed. Horrible audiobook hours, horrible smart shuffle. Now the app is being taken over by AI slop with no way of filtering it. And not to mentio",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "smart shuffle should be improved.",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "it's amazing how you know what i want to play but gat to still work on you smart shuffle to get the accurate type of song I want to play asides that the experience is amazing",
+        "rating": 4,
+        "sentiment": "mixed",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      }
+    ],
+    "control": [
+      {
+        "text": "I'm enjoying the app but I'm not interested in any of the popular radio options. How can I remove them. I like listening to godly music only.",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "The app was overall good until the new update. I don't like it that I can't pick what song i want to listen to. if I click it randomly plays a random other song. like bro I don't mind the ads but let me listen to the music i want to. why do i have to watch ads when I can't even p",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "This app was fine when I first started using it in 2018, and I didn't mind the ads back then. It was just another way they made money. But now? I can't pick my own music from a playlist and just listen to it. Everything is on mandatory shuffle. The ads are getting out of hand, an",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I have auto-play recommended songs off, it still plays songs not on my Playlist, and they are aweful. please fix your app!",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "if we cannot choose what to play then what's the point of playing music",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "love the app but as of the last month or so I'm experiencing a issue where I can't listen to any saved songs it's either the dj or I gotta search the song up and play it that way",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I just remember the old Spotify that I could choose whatever song I wanted and sometimes get ads without premium and not get 6 skips before I have to deal with whatever I'm listing to it just feels like a shell if it's former self oh yeah last but not least I didn't have to have ",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": [
+          "Shuffle isn't random",
+          "Same songs on repeat"
+        ]
+      },
+      {
+        "text": "I was Spotify 100% for years and years and years. It's crazy how dedicated I was. Fully dedicated user, recommended for everyone, blah blah blah. Drank the Kool-aid. Until this year. Things drastically changed. Spotify seems to have stopped listening to its users. My carefully cu",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "\"Smart Shuffle\" A feature nobody asked for and constantly tries to inject random songs an algorithm thinks you'll like into a playlist, there is a toggle between playing your playlist in order, smart shuffle and regular shuffle, with the icons being almost identical, you won't no",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "very bad what is this I can't choose new songs I have to wait",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      }
+    ],
+    "freegate": [
+      {
+        "text": "i love how spotify has music from all around the world! but the the limit of skips and repeats for people with no premium is just not great in my opinion, i think everybody should have a chance to listen to music as many times as they want even without paying for spotify premium.",
+        "rating": 5,
+        "sentiment": "mixed",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I am playing my favourite song but after 1 play then it can't repeat and it pop up thousand times buy premium and that's very irritating Spotify is just for premium users not for free , that's why I switched",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "This app has become useless, my playlist are always overrun by some other songs and do to almost everything you need PREMIUM! And ads, dozens of ads before each song",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Okay I'm gonna start this off by saying, I absolutely LOVE Spotify but right now I get 6 skips per 6 FREAKING HOURS?! Also not even being able to replay a song aswell? nor having playing the playlist in order?!?! OR JUST PRESSING TO CHOOSE MUSIC? What the heck dude? thats literal",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Why is this app even free in the first place if I'm just gonna get 4 ads every 10 minutes, can't pick what songs I want to listen to, get only like 5 skips a day, and Spotify forcefully adds songs to my playlist? This app sucks, Audiomack is a 50000x better alternative. I only us",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": [
+          "No control over recs"
+        ]
+      },
+      {
+        "text": "Spotify, ive always defended you, even as a non premium user. But recently Spotify has been making it hard, not being able to see lyrics on all the songs unless ur premium? multiple ads between \"30 min ad breaks\"??? such a lie more like 5 min ad breaks,6 skips an hour?? finally g",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "there are WAY too many ads. i know drugs are bad! you don't need to tell me every other song. also, i hate the whole \"listen with similar songs\"feature and the fact that i can't turn it off without getting premium. it's so pointless and most of the time it just gives random songs",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I'm kinda happy with the way they fixed things, you can actually keep using the lyrics, theres no 1 month wait or smth, infinite listening, I'm still upset that you can't repeat songs without having spoti premium but it's fine",
+        "rating": 5,
+        "sentiment": "mixed",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I had to update my review to an even lower rating because I cannot believe this app anymore and I'm about to ditch it entirely. I LOVED the new update where you could pick what song you wanted and could skip unlimited. But now its back to the only 6 songs per hour and I can't eve",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "good app, but the creator is such obsessed with cash you need premium just to play it one by one on a playlist because if you dont have premium the app will find a reference song for you but the reference is really bad not really my music taste this app is great but when it comes",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": [
+          "No control over recs"
+        ]
+      }
+    ],
+    "dj": [
+      {
+        "text": "FORVER WILL LOVE SPOTIFY. I swear it's me and Spotify against the world but anyways I would love if you would fix some bugs though, the app keeps tweaking there and then. it won't let me add songs to my like list, only my playlists. and it doesn't say I liked them. I mean it's no",
+        "rating": 5,
+        "sentiment": "mixed",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "love Spotify, but the Ai deejay doesn't listen very well and produces poor and inaccurate results. it has minor bugs like not playing songs in liked Playlist when choosing them, instead have to press play on the whole album. The monthly fee keeps going up and is to expensive for ",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Spotify added an AI DJ with no way to remove it. I am cancelling my account. I in no way, shape, or form want this garbage in an app. Uninstalling.",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Love every moment.The only improvement should be on DJ X,make it transverse broad catalogues.",
+        "rating": 4,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Please label AI generated music and add an option to disable it entirely. I don't want to be forced to unknowingly listen to AI slop. Real music is made by real people. And also reflect on your morals about paying artists and running ads that promote hate.",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Its a rly good music app and has pretty much everything, but the AI DJ is a lil glitch. When u close the app after listening thru DJ and reopen the app it'll glitch out and won't work making u either change the music or reopen the app again. specs: S22+, Spotify's latest updat, p",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "st*pid dj can't even pick good song",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "vibe coded garbo app with ai generated music forced in your playlists",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "it has all the music, I can discover more with my DJ and its offline its the best music app out there.",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Dear Spotify Team, Beta DJ brought a unique, creative energy to music discovery that many users in the U.S. truly valued. It made listening more interactive, personal, and fun in a way few features do. Bringing it back would not only delight loyal users but also strengthen engage",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      }
+    ],
+    "newmusic": [
+      {
+        "text": "It is good but need to add more trending mashup songs",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I found a couple really good songs. it's just hard for me to find a playlist that has new music to me, and that is ACTUALLY my typa music. also everytime I try to get the \"individual premium account\" it would always say that my cards don't work or smth. it's with EVERY card I use",
+        "rating": 4,
+        "sentiment": "mixed",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Recommendation Algo just sucks now, tracks already in my playlist repeated over and over, pervasive AI generated tracks being force fed in daily mixes. No new music discovery and mis characterising track genres. *Paranoid by Black Sabbath isn't Technical Death Metal*. Been a prem",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": [
+          "Same songs on repeat",
+          "Irrelevant / wrong recs"
+        ]
+      },
+      {
+        "text": "one of the best music app.The only problem is ads so I just bypass ads by uninstalling the application and opening the webpage of Spotify using Brave browser. This trick works even for PC and mobile phones. Best way to keep track of the music is by having the playlist which is pr",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Spotify has new pricings, now they took quality music and put it in the other tier. Meanwhile, i am still having issues with Spotify not alerting us with new music especially genres they can see you listen too. The new hip hop drops are still albums of 2024",
+        "rating": 5,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "garbage at giving me new music, it's all bought out, ai capitalist popularist garbage.",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "poor on new songs updates even on premium",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I moved to Spotify and even subscribed to premium and I have loves everything about the app but there is no feed where I'll be notified when the artist am following drop a new song. We should be notified when those we follow drop a new song 😭",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "No application updates. Worst music Playlists, even for paid premium subscription theres nothing new to listen to.. Unless one uses the search option, theres nothing that plays automatically.",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "man improve your music recommendation feature your recommendation is trash now man it was the best 2 years ago people want to listen to new music not just what they have already heard YT music has a better algorithm for suggestions for music",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      }
+    ],
+    "love": [
+      {
+        "text": "Spotify is amazing! The sound quality is great, playlists are always on point, and it’s super easy to discover new music. Definitely my go-to music app.",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "good source of new music",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I love Spotify! although Spotify wrapped does disappoint me sometimes it's honestly the best streaming app imo. Spotify Premium is kinda too expensive though.",
+        "rating": 4,
+        "sentiment": "mixed",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I love Spotify! Great music app, there are ads without premium, but premium is only around like 11.99$ per month I think, but yeah, other than that, it's great and I love to look at my Spotify Wrapped. Spotify Wrapped is at the end of the year, it gives you all of your top songs,",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "It's great. I was never able to find many cantonese and mandrin songs I wanted to listen to before, but I found all I wanted and more on spotify. There is a vast selection of music, and you can download playlists on your phone and share them.",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I love Spotify it mixes my music up for me not everyday the same thing🔥",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "I had apple music when I got my android because I had it with my iPhone but it was really bad even when I had my iPhone so I got Spotify then I got premium (when I had apple music I already had to pay). The DJ was good, and the algorithm itself is also good too. Apple music is hi",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "always with the new releases of my favorite bands",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "Great app, love compiling my own playlists and finding new stuff too. I don't much like the ad's but it's free so can't complain!!",
+        "rating": 5,
+        "sentiment": "mixed",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      },
+      {
+        "text": "love my beats from here and I can find things from the 80 and 90s",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "Android",
+        "store": "GLOBAL",
+        "otherThemes": []
+      }
+    ]
+  },
+  "validation": {
+    "goldSetSize": 50,
+    "overallAccuracy": 72.9,
+    "categoryAccuracy": 96.0,
+    "themeAccuracy": 72.9,
+    "kappa": 0.332
+  },
+  "limitations": [
+    "Reviewers are a self-selected slice of users; chronic low-grade dissatisfaction is structurally undercounted, so a mid-sized discovery number is not a small problem.",
+    "Category and discovery shares are stratified-sample estimates (the LLM classified a 23,508-review sample of the 96,822 substantive reviews), so they carry a margin of error; the census steps (collection, dedup, English, star baseline, monthly volume) are exact.",
+    "The discovery deep-dive was fully re-coded by gpt-oss-120b against codebook v3 (1,462 confirmed discovery reviews) under a strict gate that drops non-discovery and non-English text; rarer themes (dj, newmusic, n<35) carry more sampling error.",
+    "Discovery sub-themes have genuinely fuzzy boundaries (control vs the repetition cluster, freegate vs shuffle), so per-theme counts shift between adjacent themes; the two worst-bounded themes, autoplay and safe, were removed in v3 and folded into control and repeat.",
+    "English-only across US/GB/IN Android stores; the lenient Layer-1 filter occasionally keeps code-switched text, so the v3 deep-code pass adds a strict language guard that drops non-English reviews (for example a German review that had leaked through)."
+  ],
+  "evaluation": {
+    "sampling": {
+      "bars": [
+        {
+          "stars": 1,
+          "collected": 21.9,
+          "store": 21.9
+        },
+        {
+          "stars": 2,
+          "collected": 4.8,
+          "store": 4.8
+        },
+        {
+          "stars": 3,
+          "collected": 5.3,
+          "store": 5.3
+        },
+        {
+          "stars": 4,
+          "collected": 9.6,
+          "store": 9.6
+        },
+        {
+          "stars": 5,
+          "collected": 58.4,
+          "store": 58.4
+        }
+      ],
+      "note": "Android was census-scraped from the full NEWEST feed (not a most-recent/most-helpful sorted slice), so the collected star distribution IS the store-representative population, so there is no sampling-sort bias to reconcile."
+    },
+    "funnelReconcile": [
+      {
+        "step": "Collected",
+        "inN": null,
+        "removed": null,
+        "reason": "raw pull, Google Play NEWEST, US/GB/IN",
+        "outN": 387086
+      },
+      {
+        "step": "Deduplicated",
+        "inN": 387086,
+        "removed": 258068,
+        "reason": "exact id + text duplicates (Play returns one global stream ~3x)",
+        "outN": 129018
+      },
+      {
+        "step": "English",
+        "inN": 129018,
+        "removed": 4421,
+        "reason": "non-English (langdetect + Latin-script fallback)",
+        "outN": 124597
+      },
+      {
+        "step": "Substantive",
+        "inN": 124597,
+        "removed": 70033,
+        "reason": "contentless -> Tier C (deterministic + Layer-1 'none', projected)",
+        "outN": 54564
+      },
+      {
+        "step": "Discovery",
+        "inN": 54564,
+        "removed": 44848,
+        "reason": "substantive reviews not raising discovery (projected)",
+        "outN": 9716
+      },
+      {
+        "step": "Deep-coded",
+        "inN": 9716,
+        "removed": 8254,
+        "reason": "hand-coded discovery sample (analysis basis)",
+        "outN": 1462
+      }
+    ],
+    "fieldIntegrity": [
+      {
+        "field": "Rating",
+        "valid": 100.0,
+        "quarantined": 0
+      },
+      {
+        "field": "Date",
+        "valid": 100.0,
+        "quarantined": 0
+      },
+      {
+        "field": "Country",
+        "valid": 100.0,
+        "quarantined": 0
+      },
+      {
+        "field": "Text",
+        "valid": 100.0,
+        "quarantined": 0
+      }
+    ],
+    "languageCheck": {
+      "falseDrop": 1.5,
+      "falseKeep": 0.4,
+      "example": "1) ich habe über 1000 Songs in meinen \"liked songs\". Wenn ich auf shuffle stelle kommen trotzdem nur Lieder welche ich dieses Jahr hinzugefügt habe …",
+      "exampleVerdict": "German review that passed the Latin-script English fallback and leaked into the discovery pool, a false keep. Rates are manual spot-check estimates, not exhaustive."
+    },
+    "confusion": {
+      "labels": [
+        "repeat",
+        "shuffle",
+        "autoplay",
+        "safe",
+        "mismatch",
+        "pushy",
+        "control",
+        "freegate",
+        "dj",
+        "newmusic",
+        "love",
+        "emerging"
+      ],
+      "matrix": [
+        [
+          1.0,
+          1.0,
+          0.0,
+          2.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          2.0,
+          3.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          2.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          3.0,
+          2.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          0.0,
+          0.0,
+          2.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          4.0,
+          0.0,
+          0.0,
+          2.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          2.0,
+          2.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "discoveryAccuracy": 72.9
+    },
+    "goldComposition": {
+      "total": 50,
+      "borderline": 24,
+      "easy": 26,
+      "coverage": [
+        {
+          "cat": "Control",
+          "count": 3
+        },
+        {
+          "cat": "Dj",
+          "count": 2
+        },
+        {
+          "cat": "Emerging",
+          "count": 3
+        },
+        {
+          "cat": "Freegate",
+          "count": 8
+        },
+        {
+          "cat": "Love",
+          "count": 6
+        },
+        {
+          "cat": "Mismatch",
+          "count": 6
+        },
+        {
+          "cat": "Newmusic",
+          "count": 2
+        },
+        {
+          "cat": "Pushy",
+          "count": 5
+        },
+        {
+          "cat": "Repeat",
+          "count": 5
+        },
+        {
+          "cat": "Shuffle",
+          "count": 8
+        }
+      ]
+    },
+    "abstention": {
+      "confidentShare": 96.1,
+      "confidentAccuracy": 75.0,
+      "abstainedShare": 3.9,
+      "abstainedAccuracy": 50.0
+    }
+  },
+  "methodology": {
+    "recallProbe": {
+      "rate": 3.6,
+      "ci": 2.3,
+      "probed": 250,
+      "missed": 9
+    },
+    "borderline": {
+      "tests": [
+        {
+          "name": "Autoplay forces songs",
+          "kept": 0,
+          "total": 6
+        },
+        {
+          "name": "Recs too safe / stale",
+          "kept": 0,
+          "total": 6
+        },
+        {
+          "name": "Can't surface new releases",
+          "kept": 5,
+          "total": 6
+        }
+      ]
+    },
+    "v3recode": {
+      "pool": 1792,
+      "deepCoded": 1462,
+      "dropped": 330,
+      "notDiscovery": 327,
+      "language": 3
+    },
+    "codebook": [
+      {
+        "v": "v1",
+        "themes": 11,
+        "note": "Open-coded from 200 discovery reviews into 11 draft sub-themes."
+      },
+      {
+        "v": "v2",
+        "themes": 12,
+        "note": "Added smartrec and tightened co-tag rules after the gold-set check."
+      },
+      {
+        "v": "v3",
+        "themes": 10,
+        "note": "Removed autoplay and safe after the borderline test; full gpt-oss-120b re-code with strict guardrails."
+      }
+    ]
+  }
+}

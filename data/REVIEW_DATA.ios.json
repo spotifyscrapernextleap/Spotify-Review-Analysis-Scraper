@@ -1,0 +1,1429 @@
+{
+  "funnel": {
+    "collected": 2500,
+    "deduplicated": 2500,
+    "english": 2398,
+    "substantiveCensus": 1210,
+    "sampled": 2105,
+    "contentBearing": 1210,
+    "tierA": 481,
+    "tierB": 729,
+    "tierC": 1188,
+    "substantive": 1210,
+    "discoveryAll": 201,
+    "deepCoded": 116
+  },
+  "window": {
+    "collection": "US/GB/CA/IN/AU · iTunes RSS mostrecent (~2-3 week snapshot)",
+    "analysis": "Current snapshot (2026-06-06 to 2026-06-22)",
+    "appUpdates": 6,
+    "justification": "iOS is a current snapshot, not a time series: the iTunes RSS feed caps at ~500 reviews/country (~2-3 weeks for an app Spotify's size), so there is no multi-month window to trend. Every iOS number is a census of that snapshot (exact, no sampling margin), unlike the Android track's stratified-sample estimates."
+  },
+  "baseline": {
+    "totalReviews": 2398,
+    "avgRating": 3.9,
+    "distribution": [
+      {
+        "stars": 1,
+        "pct": 17.6,
+        "count": 423
+      },
+      {
+        "stars": 2,
+        "pct": 5.0,
+        "count": 119
+      },
+      {
+        "stars": 3,
+        "pct": 7.8,
+        "count": 187
+      },
+      {
+        "stars": 4,
+        "pct": 8.6,
+        "count": 206
+      },
+      {
+        "stars": 5,
+        "pct": 61.0,
+        "count": 1463
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "pricing",
+      "name": "Pricing / Account / Ads",
+      "count": 637,
+      "sampleCount": 637,
+      "pct": 52.6,
+      "avgRating": 2.9,
+      "color": "#F5A623"
+    },
+    {
+      "id": "discovery",
+      "name": "Discovery & Recs",
+      "count": 187,
+      "sampleCount": 187,
+      "pct": 15.5,
+      "avgRating": 3.89,
+      "color": "#1DB954"
+    },
+    {
+      "id": "ux",
+      "name": "UX / Navigation",
+      "count": 167,
+      "sampleCount": 167,
+      "pct": 13.8,
+      "avgRating": 3.19,
+      "color": "#3E63DD"
+    },
+    {
+      "id": "tech",
+      "name": "Tech / Reliability",
+      "count": 163,
+      "sampleCount": 163,
+      "pct": 13.5,
+      "avgRating": 2.3,
+      "color": "#E5484D"
+    },
+    {
+      "id": "catalogue",
+      "name": "Catalogue / Availability",
+      "count": 75,
+      "sampleCount": 75,
+      "pct": 6.2,
+      "avgRating": 3.64,
+      "color": "#8E4EC6"
+    },
+    {
+      "id": "updates",
+      "name": "App Updates",
+      "count": 55,
+      "sampleCount": 55,
+      "pct": 4.5,
+      "avgRating": 2.44,
+      "color": "#D29922"
+    },
+    {
+      "id": "audio",
+      "name": "Audio Quality",
+      "count": 51,
+      "sampleCount": 51,
+      "pct": 4.2,
+      "avgRating": 4.31,
+      "color": "#12A594"
+    },
+    {
+      "id": "other",
+      "name": "Other / Multiple",
+      "count": 22,
+      "sampleCount": 22,
+      "pct": 1.8,
+      "avgRating": 3.41,
+      "color": "#6B7280"
+    }
+  ],
+  "effect": {
+    "gap": -0.74,
+    "ciLow": -1.03,
+    "ciHigh": -0.46,
+    "note": "Genuine (deep-coded) discovery reviews rate -0.74 stars vs the all-reviews iOS census baseline (3.9). Measured on the 116 gpt-oss-120b gate-confirmed discovery reviews, not the raw Layer-1 tag: ~45% of Layer-1 'discovery' hits are high-rated (~4.6 star) false positives that would otherwise wash the gap to ~0. iOS is a census, so the count is exact; the CI reflects uncertainty in the discovery mean itself."
+  },
+  "trends": [],
+  "trendDirection": {
+    "label": "Snapshot",
+    "summary": "iOS is a ~2-3 week current snapshot (iTunes RSS caps at ~500 reviews/country), so it has no month-over-month time series. See the Android track for volume-over-time."
+  },
+  "discovery": {
+    "totalMentions": 201,
+    "deepCoded": 116,
+    "sampleN": 116,
+    "avgRating": 3.16,
+    "effectSize": -0.74,
+    "themes": [
+      {
+        "id": "repeat",
+        "name": "Same songs on repeat",
+        "count": 19,
+        "pct": 16.4,
+        "sentiment": 2.68,
+        "group": "repetition"
+      },
+      {
+        "id": "shuffle",
+        "name": "Shuffle isn't random",
+        "count": 16,
+        "pct": 13.8,
+        "sentiment": 1.81,
+        "group": "repetition"
+      },
+      {
+        "id": "mismatch",
+        "name": "Irrelevant / wrong recs",
+        "count": 10,
+        "pct": 8.6,
+        "sentiment": 2.9,
+        "group": "relevance"
+      },
+      {
+        "id": "pushy",
+        "name": "Unwanted recs pushed",
+        "count": 2,
+        "pct": 1.7,
+        "sentiment": 2.0,
+        "group": "relevance"
+      },
+      {
+        "id": "smartrec",
+        "name": "Wants smarter / personalized recs",
+        "count": 4,
+        "pct": 3.4,
+        "sentiment": 3.75,
+        "group": "relevance"
+      },
+      {
+        "id": "control",
+        "name": "No control over recs",
+        "count": 34,
+        "pct": 29.3,
+        "sentiment": 2.82,
+        "group": "features"
+      },
+      {
+        "id": "freegate",
+        "name": "Free tier blocks discovery",
+        "count": 8,
+        "pct": 6.9,
+        "sentiment": 2.75,
+        "group": "features"
+      },
+      {
+        "id": "dj",
+        "name": "AI DJ problems",
+        "count": 2,
+        "pct": 1.7,
+        "sentiment": 4.0,
+        "group": "features"
+      },
+      {
+        "id": "newmusic",
+        "name": "Can't surface new releases",
+        "count": 1,
+        "pct": 0.9,
+        "sentiment": 4.0,
+        "group": "features"
+      },
+      {
+        "id": "love",
+        "name": "Discovery that delights",
+        "count": 26,
+        "pct": 22.4,
+        "sentiment": 4.73,
+        "group": "positive"
+      }
+    ],
+    "repetitionCluster": {
+      "themeIds": [
+        "repeat",
+        "shuffle"
+      ],
+      "totalCount": 33,
+      "pctOfDiscovery": 28.4
+    }
+  },
+  "buckets": {
+    "finding": {
+      "ids": [
+        "control",
+        "dj",
+        "freegate",
+        "newmusic"
+      ],
+      "emerging": 0
+    },
+    "recs": {
+      "ids": [
+        "pushy",
+        "smartrec",
+        "mismatch"
+      ],
+      "emerging": 0
+    }
+  },
+  "bridge": {
+    "total": 33,
+    "chosen": {
+      "total": 0,
+      "label": "CHOSEN repetition",
+      "sub": "A need, not a fault",
+      "flowsTo": "Flows into unmet needs",
+      "items": []
+    },
+    "imposed": {
+      "total": 29,
+      "label": "IMPOSED repetition",
+      "sub": "A control or discovery failure",
+      "flowsTo": "Flows into Buckets 2 and 3",
+      "items": [
+        {
+          "name": "Same songs on repeat",
+          "count": 19
+        },
+        {
+          "name": "Shuffle isn't random",
+          "count": 12
+        }
+      ]
+    }
+  },
+  "behaviors": [
+    {
+      "name": "Sleep",
+      "mentions": 2
+    },
+    {
+      "name": "Background / Chores",
+      "mentions": 1
+    }
+  ],
+  "unmetNeeds": [
+    {
+      "need": "Play the exact song I choose (not a forced alternative)",
+      "mentions": 34,
+      "strength": "moderate"
+    },
+    {
+      "need": "Turn off forced / non-random shuffle",
+      "mentions": 16,
+      "strength": "moderate"
+    },
+    {
+      "need": "Basic choice without a Premium paywall",
+      "mentions": 8,
+      "strength": "emerging"
+    },
+    {
+      "need": "Smarter, more personalised recommendations",
+      "mentions": 4,
+      "strength": "emerging"
+    },
+    {
+      "need": "Keep recommendations out of my own playlists",
+      "mentions": 2,
+      "strength": "emerging"
+    },
+    {
+      "need": "Surface genuinely new releases, not the same rotation",
+      "mentions": 1,
+      "strength": "emerging"
+    }
+  ],
+  "segments": [
+    {
+      "name": "Sleep",
+      "size": 2,
+      "topTheme": "Control / forced playback",
+      "avgRating": 3.0,
+      "discoveryPct": 100
+    },
+    {
+      "name": "Background / Chores",
+      "size": 1,
+      "topTheme": "Control / forced playback",
+      "avgRating": 5.0,
+      "discoveryPct": 100
+    }
+  ],
+  "delight": {
+    "positiveShare": 19.4,
+    "positiveCount": 235,
+    "byCategory": [
+      {
+        "name": "Discovery & Recs",
+        "pct": 50.3
+      },
+      {
+        "name": "Catalogue / Availability",
+        "pct": 32.0
+      },
+      {
+        "name": "Audio Quality",
+        "pct": 72.5
+      },
+      {
+        "name": "Other / Multiple",
+        "pct": 22.7
+      }
+    ],
+    "topThemes": [
+      {
+        "name": "Discovery that delights (recs, Discover Weekly, Wrapped)",
+        "count": 26
+      },
+      {
+        "name": "Great catalogue / found what I wanted",
+        "count": 75
+      },
+      {
+        "name": "Audio quality praise",
+        "count": 51
+      }
+    ]
+  },
+  "sentimentSplit": [
+    {
+      "id": "pricing",
+      "name": "Pricing / Account / Ads",
+      "pos": 7.7,
+      "neg": 88.9
+    },
+    {
+      "id": "discovery",
+      "name": "Discovery & Recs",
+      "pos": 50.3,
+      "neg": 43.3
+    },
+    {
+      "id": "ux",
+      "name": "UX / Navigation",
+      "pos": 22.2,
+      "neg": 73.1
+    },
+    {
+      "id": "tech",
+      "name": "Tech / Reliability",
+      "pos": 3.1,
+      "neg": 94.5
+    },
+    {
+      "id": "catalogue",
+      "name": "Catalogue / Availability",
+      "pos": 32.0,
+      "neg": 61.3
+    },
+    {
+      "id": "updates",
+      "name": "App Updates",
+      "pos": 12.7,
+      "neg": 87.3
+    },
+    {
+      "id": "audio",
+      "name": "Audio Quality",
+      "pos": 72.5,
+      "neg": 23.5
+    },
+    {
+      "id": "other",
+      "name": "Other / Multiple",
+      "pos": 22.7,
+      "neg": 40.9
+    }
+  ],
+  "positiveDiscoveryThemes": [
+    {
+      "name": "AI DJ",
+      "count": 3
+    },
+    {
+      "name": "Personalized Recommendations",
+      "count": 2
+    },
+    {
+      "name": "Algorithm",
+      "count": 2
+    },
+    {
+      "name": "Smart Shuffle",
+      "count": 1
+    },
+    {
+      "name": "Playlist Recommendations",
+      "count": 1
+    },
+    {
+      "name": "New Music",
+      "count": 1
+    }
+  ],
+  "quotes": {
+    "repeat": [
+      {
+        "text": "If I have thousands of songs on a playlist why do I keep hearing the same 50 songs over and over can we fix that? Make it a true shuffle please! Other than that it’s great so you get 3/5",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "Repetitive asf plays the same songs everyday damn day",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "Too many repeated song choices and also dj doesn’t work the same way anymore it is kinda bland and repetitive and mainstream now",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": [
+          "AI DJ problems"
+        ]
+      },
+      {
+        "text": "I wish Spotify didn’t layoff so many employees for AI. I’ve tried to like it, I use it daily it trying to train it. I’ve been using Spotify for almost 10 years so I’m not new to it. But I prefer the human recommendations and the year wrap ups suck now. I use to listen to my year ",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "All the music in the entire world and you’ll end up listening to the same 50 songs you liked in every playlist. Almost like AI runs their programming.",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "i use it a lot but if i go onto search put on a song and then listen to it as it makes a new shuffle i’ll go onto spotify to either save a song i like or skip one and it comes out of the song i was listening too and puts it onto the artists album and repeats the first song it doe",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "I was adding songs to my playlist and it kept on adding the same song. I don’t know if it’s because of the new update, but it used to tell me that the song was already in my playlist but now it’s adding the song same to the playlist even though it’s already on that playlist and i",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": []
+      },
+      {
+        "text": "Fix the shuffle sequence. I shouldn’t hear the same damn song sequence ON SHUFFLE two days in a row FIX shuffle. I don’t want to hear only popular songs. Fix it! Or I’m going back to Apple Music",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": [
+          "Shuffle isn't random"
+        ]
+      },
+      {
+        "text": "Shuffle plays the same songs over and over I like Britney and three days grace but that isn’t all i want to listen too with over 2500+ songs Britney and Three Days Grace aren’t the only ones on my play list and they have more then 3 songs too 🙄",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": [
+          "Shuffle isn't random"
+        ]
+      },
+      {
+        "text": "Can’t always choose songs, have to pay or listen to ads, no replaying a song… The old rules for the free version were limiting enough. Songs are too repetitive, playlists are too repetitive, and not imaginative. Blocking an annoying song only blocks one version of the likely 20-i",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": [
+          "Free tier blocks discovery"
+        ]
+      }
+    ],
+    "shuffle": [
+      {
+        "text": "why even have a shuffle option if it doesnt work just get rid of it at this point. matter of fact get rid of the whole song suggestion algorithm. if ud like to see what spotify recommends u listen to just open tiktok",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "Plays songs randomly that are not on my playlist, really annoying",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "dooesnt shuffle",
+        "rating": 5,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": []
+      },
+      {
+        "text": "Fix the shuffle sequence. I shouldn’t hear the same damn song sequence ON SHUFFLE two days in a row FIX shuffle. I don’t want to hear only popular songs. Fix it! Or I’m going back to Apple Music",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": [
+          "Same songs on repeat"
+        ]
+      },
+      {
+        "text": "Shuffle plays the same songs over and over I like Britney and three days grace but that isn’t all i want to listen too with over 2500+ songs Britney and Three Days Grace aren’t the only ones on my play list and they have more then 3 songs too 🙄",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": [
+          "Same songs on repeat"
+        ]
+      },
+      {
+        "text": "i tried to listen to an album but it wouldn’t let me because of smart shuffle",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": []
+      },
+      {
+        "text": "Sooo… I have found lately the shuffle and using DJ AI, really just ends up playing all the music in my saved playlists and not really shuffling more / new music, which is kind of annoying.. I also found that while searching through other music playlists it’s often what I already ",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": []
+      },
+      {
+        "text": "now since spotify made the shuffle feature unable to turn off or on without premium spotify has been getting pretty useless. and even when i try to go and pay for premium it just says payments are done outside the app. then where do i go?!?! and to top it off the app glitches so ",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "IN",
+        "otherThemes": []
+      },
+      {
+        "text": "Start playing random songs without intimating. It’s better to block the content",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "IN",
+        "otherThemes": []
+      },
+      {
+        "text": "Because song play randomly",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "IN",
+        "otherThemes": []
+      }
+    ],
+    "mismatch": [
+      {
+        "text": "Don’t like new changes also songs I have never heard of turn up in my liked lists???",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "Ive loved Spotify so much ever since I got my new phone it has been much better than listening to a dumb radio, overall I have almost no complaints except for the recommendation system, like I like listening to the living tombstone but I never asked for freaking Japanese Music. A",
+        "rating": 5,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": []
+      },
+      {
+        "text": "After subscription suggestions and algorithm stopped working. I’m not satisfied with the song suggestions.",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "IN",
+        "otherThemes": []
+      },
+      {
+        "text": "Well you can only use this if you’re ready to pay the premium and even though if I have a premium account, the AI recommendations and the song recommendations when you play a random song is thrash.",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "IN",
+        "otherThemes": []
+      },
+      {
+        "text": "Selection of songs very bad especially play lists.the algorithm of selection very bad",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "IN",
+        "otherThemes": []
+      },
+      {
+        "text": "Ur recommendations suckkkk",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "IN",
+        "otherThemes": []
+      },
+      {
+        "text": "I’ve rated Spotify before and previously gave it 5 stars. However, there is one thing I would like to mention that lowers its rating. The algorithm that recommends music to you is not great. I don’t know if it’s a cost issue or just that the algorithm isn’t great but it will reco",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "AU",
+        "otherThemes": [
+          "Discovery that delights"
+        ]
+      },
+      {
+        "text": "Stupid disco ball glitter icon makes me feel physically ill. I don’t listen to rap music, yet every curated playlist is wall to wall with utter rap garbage. Old Spotify curated playlists used to be so smart, but not anymore.",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "I like Spotify as a music app, but I have a few suggestions. First of all, premium. I get having ads, but they have too many. I get four ads after a few songs, which gets really annoying. But the biggest thing is when you have only a few songs in a playlist, it gives you suggeste",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "Spotify is a great app to listen and enjoy. Ads are annoying and when u play a playlist it sometimes takes you to recommended music and it’s frustrating. Overall a good music app for many music lovers.",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      }
+    ],
+    "pushy": [
+      {
+        "text": "Algorithm keeps giving me AI music. Please do something about this scourge. It is becoming incredibly horrific, especially for someone who pays premium and gets AI music fed into autogenerated playlists. Please make clear labels for AI music to be labeled and filtered out if unwa",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "This app has gone downhill in the last month. The bloat and AI slop is getting out of hand. It feels like this app has been vibe-coded, it literally takes more than 5 seconds to add a song to a playlist. Trying to give a fair review, I am grateful I get to listen to pretty much e",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "AU",
+        "otherThemes": []
+      }
+    ],
+    "smartrec": [
+      {
+        "text": "I listen many different genres. But my core taste is not being fed through Spotify. For example I listen to instrumentals when I’m reading. If I’m reading for a long time Spotify hard locks on that genre of music and I’m not discovering anything new within what I actually like. W",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "It’s Spotify, you know it already. Only wish is I could listen to mixes like on SoundCloud 🤔😌",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "Generally the service is good, excluding the algorithm always funnels to the most listened too, and therefore leads you to a bunch of AI top popularity remix music, rather than introducing you to artists that play real instruments that you may have not heard of.",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": []
+      },
+      {
+        "text": "Best music app out there do feel like shuffle ai dj and song suggestions could be better but overall great app and good services",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "AU",
+        "otherThemes": []
+      }
+    ],
+    "control": [
+      {
+        "text": "When I got Spotify I didn’t need premium to listen to my songs in order",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "When I want to listen to my playlist, it is automatically on “listen to similar songs” mode without premium (I use Spotify without premium) and it sucks because I just want to listen to the songs on my playlist for free! I’m switching to Apple Music because this is just downright",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "Ads after every song, you can’t choose the song you want to listen. terrible",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "Ok so like idk if this is just me but I can’t pick what song I wanna listen to….like why should I pay for what I wanna listen to I could just use YouTube atp",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "Ive used Spotify for years now and struggle to sleep without music, so Spotify was really good at first although recently ive had to move to YouTube Music because despite turning of the feature that it adds random songs onto my playlist it is still happening. Two to three songs w",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "I used to use Amazon Music all the time and then I started to use Spotify and now I’m obsessed! The music is good quality and the ads are bearable. Really good, I recommend. Only improvement would be making playlists because it immediately takes to back to recommendations after a",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "Spotify I have a question for you. Why do you think I make my own playlist? To play my OWN songs. So why are you giving me over 10 recommendations in a row when my playlist isn’t even finished. If I wanted recommendations I would play a bloody playlist by Spotify. But I DON’T wan",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "Plays random music not on my list",
+        "rating": 2,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "great however could be less ads and when i click a song most of the time play that song not another one",
+        "rating": 4,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "Very good, has all my fave creators on it and I can practice my ballet without having to go onto YouTube. Has this weird thing tho where I can’t skip halfway through a song? Like how am I supposed to practice my ballet if I can’t get to the bit which I need to practice without wa",
+        "rating": 5,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      }
+    ],
+    "freegate": [
+      {
+        "text": "the fact that it randomly adds songs that i have no interest in pisses me off and the only way i can get it to not do this is to pay. i would rather just use youtube",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "Give inf skips to customers and make dj x free please👍",
+        "rating": 5,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": []
+      },
+      {
+        "text": "you cant skip songs too many times or else it doesn’t let you skip anymore and there are too many ads what have you done to Spotify bring it back to what it used to be You destroyed Spotify you shouldn’t have changed it",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": []
+      },
+      {
+        "text": "Can’t always choose songs, have to pay or listen to ads, no replaying a song… The old rules for the free version were limiting enough. Songs are too repetitive, playlists are too repetitive, and not imaginative. Blocking an annoying song only blocks one version of the likely 20-i",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": [
+          "Same songs on repeat"
+        ]
+      },
+      {
+        "text": "i LOVE spotify! i’m almost loyal to it! but the amount of ads and limited skips is very annoying… i prefer not to pay 13$ a month for music.. but overall, good app. i just wish there was more skips and less ads.",
+        "rating": 5,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": []
+      },
+      {
+        "text": "Please make it more daily skipssss",
+        "rating": 5,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "AU",
+        "otherThemes": []
+      },
+      {
+        "text": "I’ve been using Spotify Free, and I’m frustrated that I was unable to play the songs I wanted because of playback restrictions. I understand that Premium offers additional features, but being told to wait until tomorrow or pay just to listen to music made for a poor user experien",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "AU",
+        "otherThemes": []
+      },
+      {
+        "text": "I don’t need a reminder EVERY TIME I click on my playlist that it plays in a random order due to the fact I don’t have premium. I KNOW. And ads after every song sometimes ??? Ridiculous honestly",
+        "rating": 1,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      }
+    ],
+    "dj": [
+      {
+        "text": "Too many repeated song choices and also dj doesn’t work the same way anymore it is kinda bland and repetitive and mainstream now",
+        "rating": 3,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": [
+          "Same songs on repeat"
+        ]
+      },
+      {
+        "text": "The dj needs to not play sleep music I always say no and it still does",
+        "rating": 5,
+        "sentiment": "negative",
+        "platform": "iOS",
+        "store": "AU",
+        "otherThemes": []
+      }
+    ],
+    "newmusic": [
+      {
+        "text": "Was great has been declining with the tech issues and poor discoverability of new artists. But seems like it’s been getting better recently. Too many ads if you don’t pay to play though. But still accessible to everyone so not that bad..",
+        "rating": 4,
+        "sentiment": "mixed",
+        "platform": "iOS",
+        "store": "CA",
+        "otherThemes": []
+      }
+    ],
+    "love": [
+      {
+        "text": "Love how I pick a song I'm in the mood for and it picks songs to match to add to my Que",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "Spotify has an amazing music library and personalized recommendations. It helps me discover new songs every day.",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "The interface is smooth, the recommendations are spot‑on, and the playlists feel like they’re curated by someone who actually understands my taste. Whether I’m discovering new artists or revisiting old favorites, everything loads fast and sounds great. The personalized mixes, pod",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "the new dj is actually so good",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "I really like the background music, dj AI, and more genres and stereos!!!!!! I really love Spotify and I want to listen to the music again.",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "Very good playlist recommendations",
+        "rating": 4,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "US",
+        "otherThemes": []
+      },
+      {
+        "text": "This app is a easy way to listen to songs that are really hard to find and I love how there are podcasts as well it is a good way to keep your mood up and the algorithm is so on point absolutely the best music app in the word 👍👍😁😁",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "Introduced me to the music I didn’t know existed!",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "I love the DJ selection as it brings up songs and artists you haven’t played in ages and throws them with all your favourite and introduces new artists and I have found a few great songs and bands",
+        "rating": 5,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      },
+      {
+        "text": "I really like the recommendation algorithm. It pushes me towards great music I’d never find otherwise. The amount of new / additional services prominent on the landing page however is annoying and in danger of becoming off putting noise.",
+        "rating": 4,
+        "sentiment": "positive",
+        "platform": "iOS",
+        "store": "GB",
+        "otherThemes": []
+      }
+    ]
+  },
+  "validation": {
+    "goldSetSize": 24,
+    "overallAccuracy": 58.3,
+    "categoryAccuracy": 93.0,
+    "themeAccuracy": 58.3,
+    "kappa": 0.35
+  },
+  "limitations": [
+    "Reviewers are a self-selected slice of users; chronic low-grade dissatisfaction is structurally undercounted.",
+    "iOS is a ~2-3 week current snapshot (iTunes RSS caps at ~500 reviews/country), so there is no volume-over-time trend and no month-over-month comparison — unlike the 6-month Android track.",
+    "Unlike Android, iOS category and discovery counts are a CENSUS (the LLM classified every substantive candidate), so they are exact rather than sample estimates; rarer discovery sub-themes still carry small-count noise.",
+    "The discovery deep-dive was coded by gpt-oss-120b against codebook v3 under a strict gate that drops non-discovery and non-English text; discovery sub-themes have genuinely fuzzy boundaries (control vs the repetition cluster, freegate vs shuffle), so per-theme counts shift between adjacent themes. The human gold-set check surfaced a control-vs-freegate framing split (reviewers read 'can't pick songs / forced shuffle' as a free-tier problem where the model codes the mechanism as loss of control) and an emerging 'AI-generated music' complaint not yet a named theme.",
+    "The discovery effect size is measured on the gate-confirmed genuine-discovery pool, not the raw Layer-1 tag: on iOS ~45% of Layer-1 'discovery' hits are high-rated (~4.6 star) false positives, so the raw tag would understate the gap (it washes to ~0). Genuine discovery reviews rate ~0.7 stars below the iOS baseline.",
+    "The iOS gold set is ~24 reviews (smaller than Android's 50), so the accuracy numbers are a systematic-miscoding check rather than a precise per-theme figure.",
+    "iOS uses the mostrecent sort (mosthelpful was dropped as it spans ~8 years and skews the star mix); the collected distribution is the current-snapshot population, not an all-time one."
+  ],
+  "evaluation": {
+    "sampling": {
+      "bars": [
+        {
+          "stars": 1,
+          "collected": 17.6,
+          "store": 17.6
+        },
+        {
+          "stars": 2,
+          "collected": 5.0,
+          "store": 5.0
+        },
+        {
+          "stars": 3,
+          "collected": 7.8,
+          "store": 7.8
+        },
+        {
+          "stars": 4,
+          "collected": 8.6,
+          "store": 8.6
+        },
+        {
+          "stars": 5,
+          "collected": 61.0,
+          "store": 61.0
+        }
+      ],
+      "note": "iOS collected the full mostrecent RSS feed per country (every review the feed exposes, ~500/country), so the collected star distribution IS the current-snapshot population; there is no most-helpful sort slice to reconcile. (It is a snapshot, not an all-time sample.)"
+    },
+    "funnelReconcile": [
+      {
+        "step": "Collected",
+        "inN": null,
+        "removed": null,
+        "reason": "raw pull, iTunes RSS mostrecent, US/GB/CA/IN/AU",
+        "outN": 2500
+      },
+      {
+        "step": "Deduplicated",
+        "inN": 2500,
+        "removed": 0,
+        "reason": "exact id + text duplicates (iOS ids are genuinely per-storefront: 0 cross-country dupes)",
+        "outN": 2500
+      },
+      {
+        "step": "English",
+        "inN": 2500,
+        "removed": 102,
+        "reason": "non-English (langdetect + Latin-script fallback)",
+        "outN": 2398
+      },
+      {
+        "step": "Substantive",
+        "inN": 2398,
+        "removed": 1188,
+        "reason": "contentless -> Tier C (deterministic + Layer-1 'none', census)",
+        "outN": 1210
+      },
+      {
+        "step": "Discovery",
+        "inN": 1210,
+        "removed": 1009,
+        "reason": "substantive reviews not raising discovery (census)",
+        "outN": 201
+      },
+      {
+        "step": "Deep-coded",
+        "inN": 201,
+        "removed": 85,
+        "reason": "gpt-oss-120b strict v3 gate drops non-discovery + non-English",
+        "outN": 116
+      }
+    ],
+    "fieldIntegrity": [
+      {
+        "field": "Rating",
+        "valid": 100.0,
+        "quarantined": 0
+      },
+      {
+        "field": "Date",
+        "valid": 100.0,
+        "quarantined": 0
+      },
+      {
+        "field": "Country",
+        "valid": 100.0,
+        "quarantined": 0
+      },
+      {
+        "field": "Text",
+        "valid": 100.0,
+        "quarantined": 0
+      }
+    ],
+    "languageCheck": {
+      "falseDrop": 0.0,
+      "falseKeep": 0.0,
+      "example": "(no non-English review reached the discovery deep-code stage)",
+      "exampleVerdict": "The v3 deep-code pass applies a strict langdetect guard that drops confident non-English reviews before coding; the count above is what it caught in the iOS discovery pool."
+    },
+    "confusion": {
+      "labels": [
+        "repeat",
+        "shuffle",
+        "mismatch",
+        "pushy",
+        "smartrec",
+        "control",
+        "freegate",
+        "dj",
+        "newmusic",
+        "love",
+        "emerging"
+      ],
+      "matrix": [
+        [
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          3.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          3.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          3.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "discoveryAccuracy": 58.3
+    },
+    "goldComposition": {
+      "total": 24,
+      "borderline": 5,
+      "easy": 19,
+      "coverage": [
+        {
+          "cat": "Dj",
+          "count": 1
+        },
+        {
+          "cat": "Emerging",
+          "count": 1
+        },
+        {
+          "cat": "Freegate",
+          "count": 7
+        },
+        {
+          "cat": "Love",
+          "count": 6
+        },
+        {
+          "cat": "Pushy",
+          "count": 4
+        },
+        {
+          "cat": "Repeat",
+          "count": 2
+        },
+        {
+          "cat": "Shuffle",
+          "count": 1
+        },
+        {
+          "cat": "Smartrec",
+          "count": 2
+        }
+      ]
+    },
+    "abstention": {
+      "confidentShare": 95.7,
+      "confidentAccuracy": 58.3,
+      "abstainedShare": 4.3,
+      "abstainedAccuracy": 41.7
+    }
+  },
+  "countries": [
+    {
+      "code": "US",
+      "collected": 500,
+      "substantive": 430,
+      "oldest": "2026-06-21",
+      "newest": "2026-06-22"
+    },
+    {
+      "code": "GB",
+      "collected": 500,
+      "substantive": 440,
+      "oldest": "2026-06-12",
+      "newest": "2026-06-22"
+    },
+    {
+      "code": "CA",
+      "collected": 500,
+      "substantive": 401,
+      "oldest": "2026-06-11",
+      "newest": "2026-06-22"
+    },
+    {
+      "code": "IN",
+      "collected": 500,
+      "substantive": 388,
+      "oldest": "2026-06-07",
+      "newest": "2026-06-22"
+    },
+    {
+      "code": "AU",
+      "collected": 500,
+      "substantive": 447,
+      "oldest": "2026-06-06",
+      "newest": "2026-06-22"
+    }
+  ],
+  "methodology": {
+    "track": "ios",
+    "recovery": {
+      "piles": [
+        "ux",
+        "updates"
+      ],
+      "recovered": 14,
+      "origPool": 187,
+      "finalPool": 201,
+      "perPile": {
+        "ux": {
+          "missed": 11,
+          "total": 146,
+          "rate": 7.5
+        },
+        "updates": {
+          "missed": 3,
+          "total": 41,
+          "rate": 7.3
+        }
+      }
+    },
+    "deepCode": {
+      "pool": 201,
+      "kept": 116,
+      "dropped": 85,
+      "notDiscovery": 85,
+      "language": 0,
+      "dropRate": 42.3
+    },
+    "gold": {
+      "n": 24,
+      "overlap": 58.3,
+      "primary": 41.7,
+      "kappa": 0.35,
+      "boundaryNote": "Reviewers read 'can't pick songs / forced shuffle' as a free-tier problem (freegate) where the model codes the mechanism as loss of control; both sit inside the discovery cluster, so the ranking holds."
+    },
+    "categoryRecall": 93.0
+  }
+}

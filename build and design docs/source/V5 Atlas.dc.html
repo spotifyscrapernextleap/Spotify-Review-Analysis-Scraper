@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="data.js"></script>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#0d1117; color:#c9d1d9; font-family:'Sora',system-ui,sans-serif; }
+    body::-webkit-scrollbar { width:7px; }
+    body::-webkit-scrollbar-track { background:#0d1117; }
+    body::-webkit-scrollbar-thumb { background:#21262d; border-radius:3px; }
+    @keyframes atlasReveal { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  </style>
+</helmet>
+
+<div style="display:flex;min-height:100vh">
+
+  <!-- ============ SIDEBAR (V1 layout) ============ -->
+  <nav style="width:236px;background:#090c10;border-right:1px solid #21262d;position:fixed;top:0;left:0;height:100vh;display:flex;flex-direction:column;z-index:10">
+    <div style="padding:28px 24px 20px">
+      <div style="font-size:10px;font-weight:600;color:#1DB954;letter-spacing:2px;text-transform:uppercase">Review Intelligence</div>
+      <div style="font-size:11px;color:#484f58;margin-top:4px">Spotify · Discovery Analysis</div>
+    </div>
+    <div style="height:1px;background:#21262d;margin:0 16px"></div>
+    <div style="padding:12px 0;flex:1">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="4">
+        <div onClick="{{ item.onClick }}" style="padding:10px 24px;cursor:pointer;font-size:13px;font-weight:500;color:{{ item.color }};background:{{ item.bg }};border-left:3px solid {{ item.borderColor }};transition:all 0.12s">{{ item.label }}</div>
+      </sc-for>
+    </div>
+    <div style="padding:16px 24px;border-top:1px solid #21262d">
+      <div style="font-size:10px;color:#484f58;text-transform:uppercase;letter-spacing:0.5px">Prototype · Mock Data</div>
+      <div style="font-size:10px;color:#30363d;margin-top:2px">Dec 2025 – Jun 2026</div>
+    </div>
+  </nav>
+
+  <!-- ============ MAIN ============ -->
+  <main style="margin-left:236px;flex:1;padding:36px 48px 80px;max-width:1080px">
+
+    <!-- ================= OVERVIEW ================= -->
+    <sc-if value="{{ showOverview }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-bottom:28px">
+        <div style="font-size:10px;font-weight:600;color:#484f58;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Summary</div>
+        <div style="font-size:24px;font-weight:700;color:#fff;letter-spacing:-0.02em">The discovery problem is real, sized, and not the whole story</div>
+        <div style="font-size:13px;color:#8b949e;margin-top:6px">How large is discovery relative to everything else — and what users still love.</div>
+      </div>
+
+      <!-- HERO NUMBERS -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#21262d;border-radius:12px;overflow:hidden;margin-bottom:28px">
+        <div style="background:#161b22;padding:24px;text-align:center">
+          <div style="font-size:40px;font-weight:700;color:#fff;letter-spacing:-0.04em">{{ discoveryPct }}</div>
+          <div style="font-size:12px;color:#8b949e;margin-top:6px">Discovery share of voice</div>
+          <div style="font-size:10px;color:#484f58;margin-top:2px">{{ discoveryCount }} of {{ substantiveCount }} substantive · 2nd largest</div>
+        </div>
+        <div style="background:#161b22;padding:24px;text-align:center">
+          <div style="font-size:40px;font-weight:700;color:#f85149;letter-spacing:-0.04em">−0.8★</div>
+          <div style="font-size:12px;color:#8b949e;margin-top:6px">Effect size on rating</div>
+          <div style="font-size:10px;color:#484f58;margin-top:2px">{{ effectCI }}</div>
+        </div>
+        <div style="background:#161b22;padding:24px;text-align:center">
+          <div style="font-size:40px;font-weight:700;color:#1DB954;letter-spacing:-0.04em">{{ delightShare }}</div>
+          <div style="font-size:12px;color:#8b949e;margin-top:6px">Reviewers are positive</div>
+          <div style="font-size:10px;color:#484f58;margin-top:2px">{{ delightCount }} reviews delighted</div>
+        </div>
+      </div>
+
+      <!-- CAVEAT -->
+      <div style="background:rgba(29,185,84,0.06);border:1px solid rgba(29,185,84,0.15);border-radius:8px;padding:14px 20px;margin-bottom:40px;font-size:12px;color:#8b949e;line-height:1.6">
+        <span style="color:#1DB954;font-weight:600">Note:</span> These are unprompted mentions — users raised discovery without being asked. Chronic dissatisfaction is structurally undercounted in reviews. A modest share of voice does not mean a small problem.
+      </div>
+
+      <!-- 1A: SHARE OF VOICE -->
+      <div style="margin-bottom:40px">
+        <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px">Share of voice by category</div>
+        <div style="font-size:11px;color:#484f58;margin-bottom:16px">Proportion of substantive reviews raising each category. Every percentage carries its raw count.</div>
+        <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="7">
+          <div style="display:flex;align-items:center;gap:12px;padding:7px 0">
+            <div style="width:180px;font-size:13px;color:{{ cat.nameColor }};font-weight:{{ cat.nameWeight }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ cat.name }}</div>
+            <div style="flex:1;height:26px;background:#161b22;border-radius:6px;overflow:hidden">
+              <div style="height:100%;border-radius:6px;width:{{ cat.barWidth }};background:{{ cat.barColor }};transition:width 0.5s"></div>
+            </div>
+            <div style="width:120px;text-align:right;font-size:12px;font-weight:600;color:{{ cat.pctColor }}">{{ cat.pctLabel }}</div>
+            <div style="width:36px;text-align:right;font-size:11px;color:#484f58">{{ cat.ratingLabel }}</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- 1A: RATING COMPARISON + CI -->
+      <div style="margin-bottom:40px">
+        <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:16px">Rating comparison — the headline effect size</div>
+        <div style="background:#161b22;border-radius:10px;padding:24px;border:1px solid #21262d">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px">
+            <div style="width:120px;font-size:12px;color:#8b949e">All reviews</div>
+            <div style="flex:1;height:26px;background:#21262d;border-radius:4px;overflow:hidden">
+              <div style="height:100%;background:#484f58;border-radius:4px;width:{{ baselineWidth }}"></div>
+            </div>
+            <div style="font-size:17px;font-weight:700;color:#c9d1d9;width:48px;text-align:right">3.2★</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="width:120px;font-size:12px;color:#8b949e">Discovery reviews</div>
+            <div style="flex:1;height:26px;background:#21262d;border-radius:4px;overflow:hidden">
+              <div style="height:100%;background:#1DB954;border-radius:4px;width:{{ discoveryWidth }}"></div>
+            </div>
+            <div style="font-size:17px;font-weight:700;color:#1DB954;width:48px;text-align:right">2.4★</div>
+          </div>
+          <div style="margin-top:16px;padding-top:14px;border-top:1px solid #21262d;display:flex;gap:14px;align-items:baseline">
+            <div style="font-size:20px;font-weight:700;color:#f85149;letter-spacing:-0.02em">−0.8 stars</div>
+            <div style="font-size:12px;color:#8b949e">{{ effectCI }}</div>
+          </div>
+          <div style="font-size:12px;color:#484f58;margin-top:8px;line-height:1.5">{{ effectNote }} Both groups are drawn from the same biased reviewer pool, so the gap is valid even though absolute ratings are not a population truth.</div>
+        </div>
+      </div>
+
+      <!-- 1A: BASELINE HISTOGRAM + TREND -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px">
+        <div>
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px">Rating distribution</div>
+          <div style="font-size:11px;color:#484f58;margin-bottom:16px">Baseline — all rated reviews, including contentless.</div>
+          <div style="display:flex;align-items:flex-end;gap:10px;height:150px;padding:0 8px">
+            <sc-for list="{{ ratingDist }}" as="bar" hint-placeholder-count="5">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end">
+                <div style="font-size:11px;color:#8b949e;font-weight:600">{{ bar.pctLabel }}</div>
+                <div style="width:100%;background:{{ bar.barColor }};border-radius:4px 4px 0 0;height:{{ bar.barHeight }};transition:height 0.5s;min-height:4px"></div>
+                <div style="font-size:11px;color:#8b949e">{{ bar.label }}</div>
+                <div style="font-size:10px;color:#484f58">{{ bar.countLabel }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px">Discovery share of voice over time</div>
+          <div style="font-size:11px;color:#484f58;margin-bottom:12px">Direction: <span style="color:#d29922;font-weight:600">{{ trendLabel }}</span> — {{ trendSummary }}</div>
+          <svg viewBox="0 0 680 150" style="width:100%;height:150px" preserveAspectRatio="none">
+            <polygon points="{{ trendAreaPoints }}" fill="rgba(29,185,84,0.10)"></polygon>
+            <polyline points="{{ trendLinePoints }}" fill="none" stroke="#1DB954" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></polyline>
+            <sc-for list="{{ trendDots }}" as="dot" hint-placeholder-count="7">
+              <circle cx="{{ dot.cx }}" cy="{{ dot.cy }}" r="3.5" fill="#0d1117" stroke="#1DB954" stroke-width="2"></circle>
+            </sc-for>
+            <sc-for list="{{ trendLabels }}" as="lab" hint-placeholder-count="7">
+              <text x="{{ lab.x }}" y="144" fill="#484f58" font-size="11" text-anchor="middle" font-family="Sora">{{ lab.label }}</text>
+            </sc-for>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 1B: DELIGHT COUNTERWEIGHT -->
+      <div style="border-top:1px solid #21262d;padding-top:32px;margin-bottom:40px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="font-size:14px;font-weight:600;color:#fff">The counterweight — what users love</div>
+          <div style="font-size:9px;font-weight:600;color:#1DB954;background:rgba(29,185,84,0.1);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px">Light pass</div>
+        </div>
+        <div style="font-size:11px;color:#484f58;margin-bottom:18px">Deliberately shallow — a counterweight, not a second investigation.</div>
+        <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:24px">
+          <div>
+            <div style="font-size:12px;color:#8b949e;margin-bottom:12px">Positive-sentiment share by category</div>
+            <sc-for list="{{ delightByCategory }}" as="dc" hint-placeholder-count="6">
+              <div style="display:flex;align-items:center;gap:12px;padding:5px 0">
+                <div style="width:150px;font-size:12px;color:#8b949e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ dc.name }}</div>
+                <div style="flex:1;height:18px;background:#161b22;border-radius:4px;overflow:hidden">
+                  <div style="height:100%;border-radius:4px;width:{{ dc.barWidth }};background:#1DB954;opacity:0.7"></div>
+                </div>
+                <div style="width:36px;text-align:right;font-size:12px;font-weight:600;color:#c9d1d9">{{ dc.pctLabel }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div>
+            <div style="font-size:12px;color:#8b949e;margin-bottom:12px">Top delight themes</div>
+            <sc-for list="{{ delightThemes }}" as="t" hint-placeholder-count="4">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#161b22;border-radius:8px;margin-bottom:6px;border:1px solid #21262d">
+                <div style="font-size:12px;color:#c9d1d9">{{ t.name }}</div>
+                <div style="font-size:12px;font-weight:600;color:#1DB954;flex-shrink:0;margin-left:12px">{{ t.countLabel }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1C: SENTIMENT IN CONTEXT -->
+      <div style="border-top:1px solid #21262d;padding-top:32px">
+        <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px">Discovery sentiment, in context</div>
+        <div style="font-size:11px;color:#484f58;margin-bottom:18px">Positive vs negative share within each category — is discovery <span style="color:#8b949e">unusually</span> a problem, or do people grumble about everything? All six categories appear, so the engine is shown to classify everything, not just discovery.</div>
+        <sc-for list="{{ sentimentSplit }}" as="s" hint-placeholder-count="6">
+          <div style="display:flex;align-items:center;gap:12px;padding:6px 0">
+            <div style="width:180px;font-size:13px;color:{{ s.nameColor }};font-weight:{{ s.nameWeight }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ s.name }}</div>
+            <div style="flex:1;height:24px;border-radius:6px;overflow:hidden;display:flex">
+              <div style="height:100%;width:{{ s.posWidth }};background:#1DB954;opacity:0.85;display:flex;align-items:center;justify-content:flex-start;padding-left:8px;font-size:10px;color:#04130a;font-weight:600">{{ s.posLabel }}</div>
+              <div style="height:100%;width:{{ s.negWidth }};background:#f85149;opacity:0.8;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:10px;color:#1a0303;font-weight:600">{{ s.negLabel }}</div>
+            </div>
+          </div>
+        </sc-for>
+        <div style="margin-top:18px;background:#161b22;border-radius:8px;padding:16px 20px;border:1px solid #21262d">
+          <div style="font-size:12px;color:#8b949e;margin-bottom:10px">Common themes inside the <span style="color:#1DB954">positive</span> discovery reviews</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <sc-for list="{{ positiveDiscoveryThemes }}" as="pt" hint-placeholder-count="3">
+              <div style="font-size:12px;color:#c9d1d9;background:rgba(29,185,84,0.08);border:1px solid rgba(29,185,84,0.2);padding:6px 12px;border-radius:20px">{{ pt.name }} <span style="color:#1DB954;font-weight:600">{{ pt.countLabel }}</span></div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="margin-top:24px;padding:16px 20px;background:rgba(88,166,255,0.05);border:1px solid rgba(88,166,255,0.15);border-radius:8px;font-size:12px;color:#8b949e;line-height:1.6">
+          <span style="color:#58a6ff;font-weight:600">Next →</span> The overview proves discovery is real, sized, and not universally hated. The natural next question is <span style="color:#c9d1d9">why</span> — for frustrated users, what is going wrong, and what were they trying to do?
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ================= DISCOVERY DEEP DIVE ================= -->
+    <sc-if value="{{ showDiscovery }}">
+      <div style="margin-bottom:20px">
+        <div style="font-size:10px;font-weight:600;color:#484f58;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Discovery Deep Dive</div>
+        <div style="font-size:24px;font-weight:700;color:#fff;letter-spacing:-0.02em">What's going wrong, and what users were trying to do</div>
+        <div style="font-size:13px;color:#8b949e;margin-top:6px">{{ deepCodedCount }} deep-coded discovery reviews. The data points to the answers — it never announces them.</div>
+      </div>
+
+      <!-- ===== NARRATIVE BUCKETS ===== -->
+      <div>
+        <!-- BUCKET 1 -->
+        <div style="margin-bottom:36px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+            <div style="font-size:11px;font-weight:700;color:#58a6ff;background:rgba(88,166,255,0.12);width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center">1</div>
+            <div style="font-size:16px;font-weight:600;color:#fff">Listening behaviour — what users are trying to achieve</div>
+            <div style="font-size:9px;font-weight:600;color:#d29922;background:rgba(210,153,34,0.1);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px">Exploratory</div>
+          </div>
+          <div style="font-size:11px;color:#484f58;margin-bottom:16px;padding-left:34px">Goals and contexts users describe. Reviews disclose goals only sometimes — treat as directional. <span style="color:#3a4350">↳ addresses Q3: behaviours users want</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding-left:34px">
+            <sc-for list="{{ behaviors }}" as="b" hint-placeholder-count="7">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 14px;background:#161b22;border-radius:6px;border:1px solid #21262d">
+                <div style="font-size:12px;color:#8b949e">{{ b.name }}</div>
+                <div style="font-size:12px;font-weight:600;color:#c9d1d9">{{ b.mentionLabel }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- REPETITION BRIDGE -->
+        <div style="margin-bottom:36px;background:#0f1318;border:1px solid #21262d;border-radius:12px;padding:28px">
+          <div style="text-align:center;margin-bottom:24px">
+            <div style="font-size:9px;font-weight:600;color:#1DB954;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">The repetition bridge</div>
+            <div style="font-size:17px;font-weight:600;color:#fff;font-style:italic">"Users listen to the same music repeatedly"</div>
+            <div style="font-size:11px;color:#484f58;margin-top:6px">{{ bridgeTotal }} reviews — the same observed behaviour splits two ways</div>
+            <div style="width:1px;height:20px;background:#30363d;margin:14px auto 0"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+            <!-- CHOSEN -->
+            <div style="background:rgba(29,185,84,0.05);border:1px solid rgba(29,185,84,0.2);border-radius:10px;padding:20px">
+              <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:4px">
+                <div style="font-size:24px;font-weight:700;color:#1DB954;letter-spacing:-0.03em">{{ chosenTotal }}</div>
+                <div style="font-size:13px;font-weight:600;color:#c9d1d9">{{ chosenLabel }}</div>
+              </div>
+              <div style="font-size:11px;color:#1DB954;margin-bottom:14px">{{ chosenSub }}</div>
+              <sc-for list="{{ chosenItems }}" as="it" hint-placeholder-count="3">
+                <div style="display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid rgba(29,185,84,0.1);font-size:12px">
+                  <div style="color:#8b949e">{{ it.name }}</div>
+                  <div style="color:#c9d1d9;font-weight:600">{{ it.countLabel }}</div>
+                </div>
+              </sc-for>
+              <div style="font-size:11px;color:#484f58;margin-top:12px;font-style:italic">↳ {{ chosenFlow }}</div>
+            </div>
+            <!-- IMPOSED -->
+            <div style="background:rgba(248,81,73,0.05);border:1px solid rgba(248,81,73,0.2);border-radius:10px;padding:20px">
+              <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:4px">
+                <div style="font-size:24px;font-weight:700;color:#f85149;letter-spacing:-0.03em">{{ imposedTotal }}</div>
+                <div style="font-size:13px;font-weight:600;color:#c9d1d9">{{ imposedLabel }}</div>
+              </div>
+              <div style="font-size:11px;color:#f85149;margin-bottom:14px">{{ imposedSub }}</div>
+              <sc-for list="{{ imposedItems }}" as="it" hint-placeholder-count="3">
+                <div style="display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid rgba(248,81,73,0.1);font-size:12px">
+                  <div style="color:#8b949e">{{ it.name }}</div>
+                  <div style="color:#c9d1d9;font-weight:600">{{ it.countLabel }}</div>
+                </div>
+              </sc-for>
+              <div style="font-size:11px;color:#484f58;margin-top:12px;font-style:italic">↳ {{ imposedFlow }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BUCKET 2 -->
+        <div style="margin-bottom:36px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+            <div style="font-size:11px;font-weight:700;color:#f85149;background:rgba(248,81,73,0.12);width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center">2</div>
+            <div style="font-size:16px;font-weight:600;color:#fff">Problems finding new music</div>
+          </div>
+          <div style="font-size:11px;color:#484f58;margin-bottom:16px;padding-left:34px">Sub-themes of <span style="color:#8b949e">finding</span> new music. <span style="color:#3a4350">↳ addresses Q1: why discovery struggles</span></div>
+          <div style="padding-left:34px">
+            <sc-for list="{{ findingThemes }}" as="t" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:12px;padding:6px 0">
+                <div style="width:200px;font-size:12px;color:{{ t.nameColor }};font-weight:{{ t.nameWeight }}">{{ t.name }}</div>
+                <div style="flex:1;height:22px;background:#161b22;border-radius:4px;overflow:hidden">
+                  <div style="height:100%;border-radius:4px;width:{{ t.barWidth }};background:{{ t.barColor }}"></div>
+                </div>
+                <div style="width:44px;text-align:right;font-size:12px;font-weight:600;color:#c9d1d9">{{ t.pctLabel }}</div>
+                <div style="width:32px;text-align:right;font-size:11px;color:#484f58">{{ t.countLabel }}</div>
+              </div>
+            </sc-for>
+            <div style="font-size:11px;color:#484f58;margin-top:8px;font-style:italic">+ emerging / other: {{ findingEmerging }} reviews — nothing force-fit.</div>
+          </div>
+        </div>
+
+        <!-- BUCKET 3 -->
+        <div style="margin-bottom:40px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+            <div style="font-size:11px;font-weight:700;color:#f85149;background:rgba(248,81,73,0.12);width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center">3</div>
+            <div style="font-size:16px;font-weight:600;color:#fff">Problems with the recommendation system</div>
+          </div>
+          <div style="font-size:11px;color:#484f58;margin-bottom:16px;padding-left:34px">Sub-themes of <span style="color:#8b949e">what gets served</span>. <span style="color:#3a4350">↳ addresses Q2: recommendation frustrations</span></div>
+          <div style="padding-left:34px">
+            <sc-for list="{{ recThemes }}" as="t" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:12px;padding:6px 0">
+                <div style="width:200px;font-size:12px;color:{{ t.nameColor }};font-weight:{{ t.nameWeight }}">{{ t.name }}</div>
+                <div style="flex:1;height:22px;background:#161b22;border-radius:4px;overflow:hidden">
+                  <div style="height:100%;border-radius:4px;width:{{ t.barWidth }};background:{{ t.barColor }}"></div>
+                </div>
+                <div style="width:44px;text-align:right;font-size:12px;font-weight:600;color:#c9d1d9">{{ t.pctLabel }}</div>
+                <div style="width:32px;text-align:right;font-size:11px;color:#484f58">{{ t.countLabel }}</div>
+              </div>
+            </sc-for>
+            <div style="font-size:11px;color:#484f58;margin-top:8px;font-style:italic">+ emerging / other: {{ recEmerging }} reviews.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== TWO INDEPENDENT PARALLEL READS ===== -->
+      <div style="border-top:1px solid #21262d;padding-top:32px;margin-top:8px">
+        <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px">Two independent reads</div>
+        <div style="font-size:11px;color:#484f58;margin-bottom:20px">Read off the same pool as flat, standalone synthesis — <span style="color:#8b949e">not</span> slices of the sub-themes above.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+          <!-- UNMET NEEDS -->
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#c9d1d9;margin-bottom:4px">Recurring unmet needs</div>
+            <div style="font-size:10px;color:#484f58;margin-bottom:14px">Ranked by frequency. <span style="color:#3a4350">↳ addresses Q6</span></div>
+            <sc-for list="{{ unmetNeeds }}" as="need" hint-placeholder-count="6">
+              <div style="display:flex;align-items:center;gap:14px;padding:11px 16px;background:#161b22;border-radius:8px;margin-bottom:6px;border:1px solid #21262d">
+                <div style="font-size:18px;font-weight:700;color:#30363d;width:24px;text-align:center">{{ need.rank }}</div>
+                <div style="flex:1"><div style="font-size:13px;color:#e6edf3;font-weight:500">{{ need.need }}</div><div style="font-size:11px;color:#484f58;margin-top:2px">{{ need.mentionLabel }}</div></div>
+                <div style="font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.4px;color:{{ need.strengthColor }};padding:3px 9px;border-radius:4px;border:1px solid {{ need.strengthBorder }}">{{ need.strength }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <!-- SEGMENTS -->
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+              <div style="font-size:13px;font-weight:600;color:#c9d1d9">Use-case segments</div>
+              <div style="font-size:9px;font-weight:600;color:#f85149;background:rgba(248,81,73,0.1);padding:2px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:0.4px">Exploratory</div>
+            </div>
+            <div style="font-size:10px;color:#484f58;margin-bottom:14px">Self-disclosed use cases, partial coverage. <span style="color:#3a4350">↳ addresses Q5</span></div>
+            <sc-for list="{{ segments }}" as="seg" hint-placeholder-count="4">
+              <div style="padding:14px 16px;background:#161b22;border-radius:8px;margin-bottom:6px;border:1px solid #21262d">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                  <div style="font-size:13px;font-weight:600;color:#e6edf3">{{ seg.name }}</div>
+                  <div style="font-size:9px;font-weight:600;color:{{ seg.baseColor }};text-transform:uppercase;letter-spacing:0.3px">{{ seg.baseFlag }}</div>
+                </div>
+                <div style="display:flex;gap:14px;font-size:10px;color:#484f58"><div>{{ seg.sizeLabel }} of sample</div><div>{{ seg.ratingLabel }} avg</div><div style="color:#1DB954">{{ seg.discoveryLabel }} discovery</div></div>
+                <div style="font-size:10px;color:#8b949e;margin-top:4px">Top: {{ seg.topTheme }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="margin-top:24px;padding:16px 20px;background:rgba(88,166,255,0.05);border:1px solid rgba(88,166,255,0.15);border-radius:8px;font-size:12px;color:#8b949e;line-height:1.6">
+          <span style="color:#58a6ff;font-weight:600">Next →</span> Every theme, need, and segment above is a claim. The reader who wants to verify any of them clicks through to the evidence.
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ================= EVIDENCE EXPLORER ================= -->
+    <sc-if value="{{ showEvidence }}">
+      <div style="margin-bottom:24px">
+        <div style="font-size:10px;font-weight:600;color:#484f58;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Evidence Explorer</div>
+        <div style="font-size:24px;font-weight:700;color:#fff;letter-spacing:-0.02em">The receipts</div>
+        <div style="font-size:13px;color:#8b949e;margin-top:6px">Pull any thread and check it against raw text. Each quote shows the snippet that justified its tag.</div>
+      </div>
+
+      <!-- FILTER CHIPS -->
+      <div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:24px;padding:16px 20px;background:#161b22;border:1px solid #21262d;border-radius:10px">
+        <div>
+          <div style="font-size:10px;color:#484f58;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Sentiment</div>
+          <div style="display:flex;gap:6px">
+            <sc-for list="{{ sentimentChips }}" as="c" hint-placeholder-count="3">
+              <div onClick="{{ c.onClick }}" style="font-size:12px;padding:5px 12px;border-radius:6px;cursor:pointer;background:{{ c.bg }};color:{{ c.color }};border:1px solid {{ c.border }}">{{ c.label }}</div>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:10px;color:#484f58;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Platform</div>
+          <div style="display:flex;gap:6px">
+            <sc-for list="{{ platformChips }}" as="c" hint-placeholder-count="3">
+              <div onClick="{{ c.onClick }}" style="font-size:12px;padding:5px 12px;border-radius:6px;cursor:pointer;background:{{ c.bg }};color:{{ c.color }};border:1px solid {{ c.border }}">{{ c.label }}</div>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:10px;color:#484f58;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">Country</div>
+          <div style="display:flex;gap:6px">
+            <sc-for list="{{ countryChips }}" as="c" hint-placeholder-count="4">
+              <div onClick="{{ c.onClick }}" style="font-size:12px;padding:5px 12px;border-radius:6px;cursor:pointer;background:{{ c.bg }};color:{{ c.color }};border:1px solid {{ c.border }}">{{ c.label }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px">
+        <!-- SUB-THEME LIST -->
+        <div style="width:220px;flex-shrink:0">
+          <div style="font-size:10px;color:#484f58;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px">Discovery sub-theme</div>
+          <sc-for list="{{ themeList }}" as="tl" hint-placeholder-count="9">
+            <div onClick="{{ tl.onClick }}" style="padding:9px 14px;cursor:pointer;font-size:12px;color:{{ tl.color }};background:{{ tl.bg }};border:{{ tl.border }};border-radius:6px;margin-bottom:4px;transition:all 0.12s;font-weight:{{ tl.weight }}">
+              <div>{{ tl.name }}</div>
+              <div style="font-size:10px;color:#484f58;margin-top:2px">{{ tl.countLabel }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <!-- QUOTES -->
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px">
+            <div style="font-size:14px;font-weight:600;color:#fff">{{ selectedThemeName }}</div>
+            <div style="font-size:11px;color:#484f58">{{ quoteCountLabel }}</div>
+          </div>
+          <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="3">
+            <div style="background:#161b22;border-radius:8px;padding:18px 20px;margin-bottom:10px;border:1px solid #21262d;border-left:3px solid {{ q.accent }}">
+              <div style="font-size:13px;color:#e6edf3;line-height:1.6;font-style:italic">"{{ q.text }}"</div>
+              <div style="display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap">
+                <div style="font-size:10px;color:#8b949e;background:#21262d;padding:3px 8px;border-radius:4px">{{ q.themeTag }}</div>
+                <div style="font-size:11px;color:{{ q.sentColor }};font-weight:600">{{ q.sentLabel }}</div>
+                <div style="font-size:11px;color:{{ q.starColor }}">{{ q.starDisplay }}</div>
+                <div style="font-size:11px;color:#484f58">{{ q.meta }}</div>
+              </div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ noQuotes }}">
+            <div style="padding:40px;text-align:center;font-size:12px;color:#484f58;background:#161b22;border-radius:8px;border:1px dashed #21262d">No quotes match these filters.</div>
+          </sc-if>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ================= METHODOLOGY & EVALUATION ================= -->
+    <sc-if value="{{ showMethodology }}">
+      <div style="margin-bottom:28px">
+        <div style="font-size:10px;font-weight:600;color:#484f58;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Methodology &amp; Evaluation</div>
+        <div style="font-size:24px;font-weight:700;color:#fff;letter-spacing:-0.02em">Here's how this was built</div>
+        <div style="font-size:13px;color:#8b949e;margin-top:6px">Presented as visuals, not paragraphs. Nothing is asserted that can't be checked.</div>
+      </div>
+
+      <!-- FUNNEL -->
+      <div style="margin-bottom:36px">
+        <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:16px">Collection funnel</div>
+        <sc-for list="{{ funnelSteps }}" as="step" hint-placeholder-count="6">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+            <div style="width:150px;font-size:12px;color:#8b949e;text-align:right">{{ step.label }}</div>
+            <div style="flex:1;height:26px;background:#161b22;border-radius:4px;overflow:hidden">
+              <div style="height:100%;background:{{ step.barColor }};border-radius:4px;width:{{ step.barWidth }};transition:width 0.5s"></div>
+            </div>
+            <div style="width:56px;font-size:12px;font-weight:600;color:#c9d1d9;text-align:right">{{ step.countLabel }}</div>
+            <div style="width:90px;font-size:11px;color:#f85149;text-align:right">{{ step.removedLabel }}</div>
+          </div>
+        </sc-for>
+        <div style="font-size:11px;color:#484f58;margin-top:12px;padding-left:164px">Tier A (deep-codeable): 1,847 · Tier B (thin but categorisable): 892 · Tier C (rating only): 673</div>
+      </div>
+
+      <!-- ACCURACY + WINDOW -->
+      <div style="display:grid;grid-template-columns:0.8fr 1.2fr;gap:20px;margin-bottom:36px">
+        <div style="background:#161b22;border-radius:10px;padding:24px;border:1px solid #21262d;text-align:center;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-size:11px;color:#8b949e;text-transform:uppercase;letter-spacing:0.5px">Gold-set agreement</div>
+          <div style="font-size:48px;font-weight:700;color:#1DB954;margin-top:6px;letter-spacing:-0.04em">84%</div>
+          <div style="font-size:11px;color:#484f58;margin-top:4px">vs 50-review gold set · per-category detail in the evaluation layer below</div>
+        </div>
+        <div style="background:#161b22;border-radius:10px;padding:22px 24px;border:1px solid #21262d">
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:8px">Analysis window</div>
+          <div style="font-size:12px;color:#8b949e;line-height:1.6">{{ windowJustification }}</div>
+          <div style="display:flex;gap:20px;margin-top:14px;padding-top:14px;border-top:1px solid #21262d;font-size:11px;color:#484f58">
+            <div><span style="color:#8b949e;font-weight:500">Collection:</span> Jun 2025 – Jun 2026</div>
+            <div><span style="color:#8b949e;font-weight:500">Analysis:</span> Dec 2025 – Jun 2026</div>
+            <div><span style="color:#8b949e;font-weight:500">Updates spanned:</span> 4</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DENOMINATORS + SENTIMENT BASELINE -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px">
+        <div style="background:#161b22;border-radius:10px;padding:22px 24px;border:1px solid #21262d">
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:12px">Denominators, stated explicitly</div>
+          <div style="font-size:12px;color:#8b949e;line-height:1.7">
+            <div style="margin-bottom:6px"><span style="color:#c9d1d9;font-weight:500">Category share of voice:</span> % of 2,739 substantive reviews (Tier A+B)</div>
+            <div style="margin-bottom:6px"><span style="color:#c9d1d9;font-weight:500">Discovery sub-themes:</span> % of 412 deep-coded reviews (Tier A)</div>
+            <div style="margin-bottom:6px"><span style="color:#c9d1d9;font-weight:500">Star baseline:</span> all 3,412 English reviews incl. contentless (A+B+C)</div>
+            <div><span style="color:#c9d1d9;font-weight:500">Effect size:</span> discovery avg − overall avg, same reviewer pool</div>
+          </div>
+        </div>
+        <div style="background:#161b22;border-radius:10px;padding:22px 24px;border:1px solid #21262d">
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:12px">How the sentiment baseline is computed</div>
+          <div style="font-size:12px;color:#8b949e;line-height:1.7">Sentiment is read from a broad first pass over every substantive review, scored positive / negative / mixed from the review text — independent of the star rating. The star histogram is kept as a separate, rating-only signal so the two can be cross-checked rather than conflated.</div>
+        </div>
+      </div>
+
+      <!-- LIMITATIONS -->
+      <div style="margin-bottom:48px">
+        <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:14px">Limitations, stated plainly</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 24px">
+          <sc-for list="{{ limitations }}" as="lim" hint-placeholder-count="6">
+            <div style="display:flex;gap:10px;align-items:flex-start;padding:6px 0">
+              <div style="color:#f85149;font-size:7px;margin-top:6px;flex-shrink:0">●</div>
+              <div style="font-size:12px;color:#8b949e;line-height:1.5">{{ lim.text }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- ===== THE EXPANDER ===== -->
+      <div style="text-align:center;padding:8px 0 4px">
+        <div onClick="{{ toggleEval }}" style="display:inline-block;cursor:pointer;font-size:16px;font-weight:600;color:#1DB954;letter-spacing:-0.01em;padding:14px 28px;border:1px solid rgba(29,185,84,0.3);border-radius:30px;background:rgba(29,185,84,0.06);transition:all 0.15s" style-hover="background:rgba(29,185,84,0.12);border-color:rgba(29,185,84,0.5)">
+          Wondering if the data is reliable? Here's how. {{ evalChevron }}
+        </div>
+        <div style="font-size:11px;color:#484f58;margin-top:10px">{{ evalHint }}</div>
+      </div>
+
+      <!-- ===== EVALUATION LAYER (expands inline) ===== -->
+      <sc-if value="{{ evalOpen }}">
+        <div style="margin-top:40px;padding-top:40px;border-top:1px solid #21262d;animation:atlasReveal 0.4s ease">
+          <div style="margin-bottom:28px">
+            <div style="font-size:10px;font-weight:600;color:#484f58;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Evaluation layer</div>
+            <div style="font-size:20px;font-weight:700;color:#fff;letter-spacing:-0.02em">The quality checks, as pictures rather than promises</div>
+            <div style="font-size:12px;color:#8b949e;margin-top:6px">An eval the evaluator can see beats one they have to take on trust.</div>
+          </div>
+
+          <!-- 1. SAMPLING FAIRNESS -->
+          <div style="margin-bottom:36px">
+            <div style="font-size:13px;font-weight:600;color:#c9d1d9;margin-bottom:4px">1 · Sampling fairness</div>
+            <div style="font-size:11px;color:#484f58;margin-bottom:16px">Collected star distribution against each store's publicly reported distribution. The gap is the point.</div>
+            <div style="display:flex;align-items:flex-end;gap:20px;height:170px;padding:0 8px">
+              <sc-for list="{{ samplingBars }}" as="b" hint-placeholder-count="5">
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end">
+                  <div style="width:100%;display:flex;gap:5px;align-items:flex-end;height:120px;justify-content:center">
+                    <div style="width:40%;background:#484f58;border-radius:3px 3px 0 0;height:{{ b.collectedH }}" title="collected"></div>
+                    <div style="width:40%;background:#1DB954;border-radius:3px 3px 0 0;height:{{ b.storeH }}" title="store-reported"></div>
+                  </div>
+                  <div style="font-size:11px;color:#8b949e">{{ b.label }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:18px;margin-top:12px;font-size:11px;color:#8b949e">
+              <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;background:#484f58;border-radius:2px"></div>Collected</div>
+              <div style="display:flex;align-items:center;gap:6px"><div style="width:10px;height:10px;background:#1DB954;border-radius:2px"></div>Store-reported</div>
+            </div>
+            <div style="font-size:12px;color:#484f58;margin-top:12px;line-height:1.5">{{ samplingNote }}</div>
+          </div>
+
+          <!-- 2. FUNNEL RECONCILIATION -->
+          <div style="margin-bottom:36px">
+            <div style="font-size:13px;font-weight:600;color:#c9d1d9;margin-bottom:4px">2 · Funnel reconciliation</div>
+            <div style="font-size:11px;color:#484f58;margin-bottom:16px">The same funnel, shown to conserve at every step: in = out + removed.</div>
+            <div style="background:#161b22;border:1px solid #21262d;border-radius:10px;overflow:hidden">
+              <sc-for list="{{ reconcileRows }}" as="r" hint-placeholder-count="6">
+                <div style="display:flex;align-items:center;gap:16px;padding:12px 20px;border-bottom:1px solid #21262d;font-size:12px">
+                  <div style="width:150px;color:#c9d1d9;font-weight:500">{{ r.step }}</div>
+                  <div style="flex:1;color:#484f58;font-family:monospace;font-size:12px">{{ r.equation }}</div>
+                  <div style="color:#8b949e">{{ r.reason }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <!-- 3. FIELD INTEGRITY -->
+          <div style="margin-bottom:36px">
+            <div style="font-size:13px;font-weight:600;color:#c9d1d9;margin-bottom:4px">3 · Field integrity</div>
+            <div style="font-size:11px;color:#484f58;margin-bottom:16px">% valid records and count quarantined per field — a missing rating was quarantined, never coerced to zero.</div>
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+              <sc-for list="{{ fieldCards }}" as="f" hint-placeholder-count="5">
+                <div style="background:#161b22;border:1px solid #21262d;border-radius:10px;padding:16px;text-align:center">
+                  <div style="font-size:24px;font-weight:700;color:{{ f.valColor }};letter-spacing:-0.03em">{{ f.validLabel }}</div>
+                  <div style="font-size:11px;color:#8b949e;margin-top:4px">{{ f.field }}</div>
+                  <div style="font-size:10px;color:#484f58;margin-top:6px">{{ f.quarantinedLabel }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <!-- 4. LANGUAGE SPOT-CHECK -->
+          <div style="margin-bottom:36px">
+            <div style="font-size:13px;font-weight:600;color:#c9d1d9;margin-bottom:4px">4 · Language-filter spot-check</div>
+            <div style="font-size:11px;color:#484f58;margin-bottom:16px">Measured error rates of the English filter, with a code-switched worked example.</div>
+            <div style="display:grid;grid-template-columns:0.7fr 1.3fr;gap:16px">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <div style="background:#161b22;border:1px solid #21262d;border-radius:10px;padding:18px;text-align:center">
+                  <div style="font-size:28px;font-weight:700;color:#d29922">{{ falseDrop }}</div>
+                  <div style="font-size:10px;color:#8b949e;margin-top:4px">False-drop rate</div>
+                </div>
+                <div style="background:#161b22;border:1px solid #21262d;border-radius:10px;padding:18px;text-align:center">
+                  <div style="font-size:28px;font-weight:700;color:#d29922">{{ falseKeep }}</div>
+                  <div style="font-size:10px;color:#8b949e;margin-top:4px">False-keep rate</div>
+                </div>
+              </div>
+              <div style="background:#161b22;border:1px solid #21262d;border-radius:10px;padding:18px 20px;border-left:3px solid #d29922">
+                <div style="font-size:13px;color:#e6edf3;font-style:italic;line-height:1.6">"{{ langExample }}"</div>
+                <div style="font-size:11px;color:#8b949e;margin-top:10px;line-height:1.5">{{ langVerdict }}</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. CONFUSION MATRIX -->
+          <div style="margin-bottom:36px">
+            <div style="font-size:13px;font-weight:600;color:#c9d1d9;margin-bottom:4px">5 · Per-category accuracy <span style="color:#1DB954;font-weight:500">· the centrepiece</span></div>
+            <div style="font-size:11px;color:#484f58;margin-bottom:16px">Classifier labels vs the gold set. Rows = truth, columns = predicted. Discovery's row and column are highlighted.</div>
+            <div style="display:inline-block;background:#161b22;border:1px solid #21262d;border-radius:10px;padding:18px">
+              <div style="display:flex;align-items:center;gap:0;margin-bottom:6px;margin-left:90px">
+                <sc-for list="{{ confLabels }}" as="cl" hint-placeholder-count="6">
+                  <div style="width:54px;text-align:center;font-size:10px;color:{{ cl.color }};font-weight:{{ cl.weight }}">{{ cl.short }}</div>
+                </sc-for>
+              </div>
+              <sc-for list="{{ confRows }}" as="row" hint-placeholder-count="6">
+                <div style="display:flex;align-items:center;gap:0;margin-bottom:3px">
+                  <div style="width:90px;text-align:right;padding-right:10px;font-size:10px;color:{{ row.color }};font-weight:{{ row.weight }}">{{ row.label }}</div>
+                  <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="6">
+                    <div style="width:51px;height:38px;margin:1.5px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;background:{{ cell.bg }};color:{{ cell.color }};border:{{ cell.ring }}">{{ cell.val }}</div>
+                  </sc-for>
+                </div>
+              </sc-for>
+              <div style="font-size:11px;color:#8b949e;margin-top:12px;margin-left:90px">Discovery standalone accuracy: <span style="color:#1DB954;font-weight:600">{{ discoveryAccuracy }}</span></div>
+            </div>
+          </div>
+
+          <!-- 6. GOLD-SET COMPOSITION -->
+          <div style="margin-bottom:36px">
+            <div style="font-size:13px;font-weight:600;color:#c9d1d9;margin-bottom:4px">6 · Gold-set composition</div>
+            <div style="font-size:11px;color:#484f58;margin-bottom:16px">Deliberately weighted toward hard borderline cases and covering all six categories — the accuracy number isn't flattered by easy examples.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+              <div>
+                <div style="font-size:11px;color:#8b949e;margin-bottom:10px">Difficulty mix ({{ goldTotal }} reviews)</div>
+                <div style="display:flex;height:40px;border-radius:8px;overflow:hidden;margin-bottom:8px">
+                  <div style="width:{{ borderlineWidth }};background:#bc8cff;display:flex;align-items:center;padding-left:12px;font-size:11px;color:#0d1117;font-weight:600">Borderline {{ borderlineCount }}</div>
+                  <div style="width:{{ easyWidth }};background:#30363d;display:flex;align-items:center;padding-left:12px;font-size:11px;color:#8b949e;font-weight:600">Easy {{ easyCount }}</div>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:11px;color:#8b949e;margin-bottom:10px">Coverage per category</div>
+                <sc-for list="{{ goldCoverage }}" as="g" hint-placeholder-count="6">
+                  <div style="display:flex;align-items:center;gap:10px;padding:3px 0">
+                    <div style="width:80px;font-size:11px;color:{{ g.color }};font-weight:{{ g.weight }}">{{ g.cat }}</div>
+                    <div style="flex:1;height:14px;background:#161b22;border-radius:3px;overflow:hidden"><div style="height:100%;width:{{ g.barWidth }};background:{{ g.barColor }};border-radius:3px"></div></div>
+                    <div style="width:24px;text-align:right;font-size:11px;color:#c9d1d9;font-weight:600">{{ g.count }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. ABSTENTION CALIBRATION -->
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#c9d1d9;margin-bottom:4px">7 · Abstention calibration</div>
+            <div style="font-size:11px;color:#484f58;margin-bottom:16px">Accuracy of confident labels vs abstained / uncertain ones — confidence tracks correctness.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+              <div style="background:#161b22;border:1px solid #21262d;border-radius:10px;padding:20px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+                  <div style="font-size:12px;color:#8b949e">Confident labels <span style="color:#484f58">({{ confidentShare }} of set)</span></div>
+                  <div style="font-size:22px;font-weight:700;color:#1DB954">{{ confidentAccuracy }}</div>
+                </div>
+                <div style="height:10px;background:#21262d;border-radius:5px;overflow:hidden"><div style="height:100%;width:{{ confidentAccuracy }};background:#1DB954;border-radius:5px"></div></div>
+              </div>
+              <div style="background:#161b22;border:1px solid #21262d;border-radius:10px;padding:20px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+                  <div style="font-size:12px;color:#8b949e">Abstained labels <span style="color:#484f58">({{ abstainedShare }} of set)</span></div>
+                  <div style="font-size:22px;font-weight:700;color:#d29922">{{ abstainedAccuracy }}</div>
+                </div>
+                <div style="height:10px;background:#21262d;border-radius:5px;overflow:hidden"><div style="height:100%;width:{{ abstainedAccuracy }};background:#d29922;border-radius:5px"></div></div>
+              </div>
+            </div>
+            <div style="margin-top:32px;padding:18px 22px;background:rgba(29,185,84,0.05);border:1px solid rgba(29,185,84,0.15);border-radius:10px;font-size:13px;color:#8b949e;line-height:1.6;text-align:center">
+              By the end, the reader has seen the problem sized, the balanced picture, the deep diagnosis, the raw evidence, and the proof that the machinery underneath is sound. <span style="color:#c9d1d9">Nothing is asserted that can't be checked.</span>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </sc-if>
+
+  </main>
+</div>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#0d1117"/>
+    <rect x="30" y="58" width="9" height="14" rx="1.5" fill="#1DB954"/>
+    <rect x="43" y="46" width="9" height="26" rx="1.5" fill="#1DB954"/>
+    <rect x="56" y="34" width="9" height="38" rx="1.5" fill="#1DB954"/>
+    <rect x="30" y="28" width="35" height="3" rx="1.5" fill="#30363d"/>
+    <rect x="30" y="34" width="22" height="3" rx="1.5" fill="#21262d"/>
+  </svg>
+</template></x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    activeSection: 'overview',
+    deepView: 'narrative',
+    selectedTheme: 'repeat',
+    evalOpen: false,
+    evSentiment: 'all',
+    evPlatform: 'all',
+    evCountry: 'all'
+  };
+
+  renderVals() {
+    const d = window.REVIEW_DATA;
+    if (!d) return this.emptyState();
+    const S = this.state;
+
+    // ---------- NAV ----------
+    const sections = [
+      { id: 'overview', label: 'Overview' },
+      { id: 'discovery', label: 'Discovery Deep Dive' },
+      { id: 'evidence', label: 'Evidence Explorer' },
+      { id: 'methodology', label: 'Methodology & Evaluation' }
+    ];
+    const navItems = sections.map(s => ({
+      label: s.label,
+      color: S.activeSection === s.id ? '#fff' : '#8b949e',
+      bg: S.activeSection === s.id ? 'rgba(29,185,84,0.08)' : 'transparent',
+      borderColor: S.activeSection === s.id ? '#1DB954' : 'transparent',
+      onClick: () => this.setState({ activeSection: s.id })
+    }));
+
+    // ---------- OVERVIEW: categories ----------
+    const maxCat = Math.max(...d.categories.map(c => c.count));
+    const categories = d.categories.map(c => {
+      const isDisco = c.id === 'discovery';
+      return {
+        name: c.name,
+        barWidth: (c.count / maxCat * 100) + '%',
+        barColor: isDisco ? '#1DB954' : '#30363d',
+        nameColor: isDisco ? '#1DB954' : '#c9d1d9',
+        nameWeight: isDisco ? '600' : '400',
+        pctLabel: c.pct + '% (n=' + c.count + ')',
+        pctColor: isDisco ? '#1DB954' : '#c9d1d9',
+        ratingLabel: c.avgRating + '★'
+      };
+    });
+
+    // rating distribution
+    const maxDist = Math.max(...d.baseline.distribution.map(x => x.pct));
+    const ratingDist = d.baseline.distribution.map(r => ({
+      pctLabel: r.pct + '%',
+      barHeight: (r.pct / maxDist * 100) + '%',
+      barColor: r.stars <= 2 ? '#f85149' : r.stars === 3 ? '#d29922' : '#1DB954',
+      label: r.stars + '★',
+      countLabel: 'n=' + r.count
+    }));
+
+    // trend line chart
+    const tr = d.trends;
+    const tmin = 14, tmax = 20;
+    const W = 680, padX = 26, padTop = 12, padBot = 28, H = 150;
+    const innerW = W - padX * 2, innerH = H - padTop - padBot;
+    const tpts = tr.map((t, i) => ({
+      x: padX + innerW * (i / (tr.length - 1)),
+      y: padTop + innerH * (1 - (t.discoveryPct - tmin) / (tmax - tmin)),
+      month: t.month
+    }));
+    const trendLinePoints = tpts.map(p => p.x.toFixed(1) + ',' + p.y.toFixed(1)).join(' ');
+    const trendAreaPoints = padX + ',' + (padTop + innerH) + ' ' + trendLinePoints + ' ' + (padX + innerW) + ',' + (padTop + innerH);
+    const trendDots = tpts.map(p => ({ cx: +p.x.toFixed(1), cy: +p.y.toFixed(1) }));
+    const trendLabels = tpts.map(p => ({ x: +p.x.toFixed(1), label: p.month }));
+
+    // delight
+    const maxDel = Math.max(...d.delight.byCategory.map(c => c.pct));
+    const delightByCategory = d.delight.byCategory.map(c => ({
+      name: c.name, barWidth: (c.pct / 100 * 100) + '%', pctLabel: c.pct + '%'
+    }));
+    const delightThemes = d.delight.topThemes.map(t => ({ name: t.name, countLabel: 'n=' + t.count }));
+
+    // sentiment split
+    const sentimentSplit = d.sentimentSplit.map(s => {
+      const isDisco = s.id === 'discovery';
+      return {
+        name: s.name,
+        nameColor: isDisco ? '#1DB954' : '#c9d1d9',
+        nameWeight: isDisco ? '600' : '400',
+        posWidth: s.pos + '%', negWidth: s.neg + '%',
+        posLabel: s.pos + '%', negLabel: s.neg + '%'
+      };
+    });
+    const positiveDiscoveryThemes = d.positiveDiscoveryThemes.map(t => ({ name: t.name, countLabel: '· ' + t.count }));
+
+    // ---------- DEEP DIVE ----------
+    const themesById = {};
+    d.discovery.themes.forEach(t => { themesById[t.id] = t; });
+    const maxTheme = d.discovery.themes[0].count;
+
+    const themes = d.discovery.themes.map(t => {
+      const isRep = t.group === 'repetition';
+      return {
+        name: t.name,
+        barWidth: (t.count / maxTheme * 100) + '%',
+        barColor: isRep ? '#1DB954' : '#30363d',
+        dotColor: isRep ? '#1DB954' : '#30363d',
+        nameColor: isRep ? '#1DB954' : '#c9d1d9',
+        nameWeight: isRep ? '600' : '400',
+        pctLabel: t.pct + '%',
+        countLabel: 'n=' + t.count
+      };
+    });
+
+    const buildBucket = (ids) => {
+      const items = ids.map(id => themesById[id]).filter(Boolean);
+      const max = Math.max(...items.map(t => t.count));
+      return items.map(t => ({
+        name: t.name,
+        barWidth: (t.count / max * 100) + '%',
+        barColor: t.group === 'repetition' ? '#1DB954' : '#f85149',
+        nameColor: t.group === 'repetition' ? '#1DB954' : '#c9d1d9',
+        nameWeight: t.group === 'repetition' ? '600' : '400',
+        pctLabel: t.pct + '%',
+        countLabel: 'n=' + t.count
+      }));
+    };
+    const findingThemes = buildBucket(d.buckets.finding.ids);
+    const recThemes = buildBucket(d.buckets.recs.ids);
+
+    // bridge
+    const br = d.bridge;
+    const chosenItems = br.chosen.items.map(i => ({ name: i.name, countLabel: 'n=' + i.count }));
+    const imposedItems = br.imposed.items.map(i => ({ name: i.name, countLabel: 'n=' + i.count }));
+
+    // behaviors / needs / segments
+    const behaviors = d.behaviors.map(b => ({ name: b.name, mentionLabel: b.mentions + '' }));
+    const unmetNeeds = d.unmetNeeds.map((n, i) => ({
+      need: n.need, rank: i + 1, mentionLabel: n.mentions + ' mentions', strength: n.strength,
+      strengthColor: n.strength === 'strong' ? '#1DB954' : n.strength === 'moderate' ? '#d29922' : '#484f58',
+      strengthBorder: n.strength === 'strong' ? 'rgba(29,185,84,0.3)' : n.strength === 'moderate' ? 'rgba(210,153,34,0.3)' : '#30363d'
+    }));
+    const segments = d.segments.map(s => ({
+      name: s.name, sizeLabel: s.size + '%', ratingLabel: s.avgRating + '★',
+      topTheme: s.topTheme, discoveryLabel: s.discoveryPct + '%',
+      baseFlag: s.size < 20 ? 'directional, low n' : '',
+      baseColor: '#d29922'
+    }));
+
+    // ---------- EVIDENCE ----------
+    const themeList = d.discovery.themes.map(t => ({
+      name: t.name, countLabel: t.count + ' reviews',
+      color: S.selectedTheme === t.id ? '#fff' : '#8b949e',
+      bg: S.selectedTheme === t.id ? 'rgba(29,185,84,0.1)' : 'transparent',
+      border: S.selectedTheme === t.id ? '1px solid rgba(29,185,84,0.25)' : '1px solid transparent',
+      weight: S.selectedTheme === t.id ? '600' : '400',
+      onClick: () => this.setState({ selectedTheme: t.id })
+    }));
+    const selTheme = themesById[S.selectedTheme];
+    const selectedThemeName = selTheme ? selTheme.name : '';
+
+    const rawQuotes = d.quotes[S.selectedTheme] || [];
+    const filtered = rawQuotes.filter(q => {
+      const sent = q.rating >= 3 ? 'pos' : 'neg';
+      if (S.evSentiment !== 'all' && sent !== S.evSentiment) return false;
+      if (S.evPlatform !== 'all' && q.platform !== S.evPlatform) return false;
+      if (S.evCountry !== 'all' && q.store !== S.evCountry) return false;
+      return true;
+    });
+    const quotes = filtered.map(q => {
+      const isPos = q.rating >= 3;
+      return {
+        text: q.text,
+        themeTag: selectedThemeName,
+        sentLabel: isPos ? 'Positive' : 'Negative',
+        sentColor: isPos ? '#1DB954' : '#f85149',
+        accent: isPos ? '#1DB954' : '#f85149',
+        starDisplay: '★'.repeat(q.rating) + '☆'.repeat(5 - q.rating),
+        starColor: q.rating <= 2 ? '#f85149' : '#d29922',
+        meta: q.platform + ' · ' + q.store
+      };
+    });
+    const quoteCountLabel = filtered.length + ' of ' + rawQuotes.length + ' quotes';
+    const noQuotes = filtered.length === 0;
+
+    const mkChips = (opts, cur, key) => opts.map(o => ({
+      label: o.label,
+      onClick: () => this.setState({ [key]: o.val }),
+      bg: cur === o.val ? 'rgba(29,185,84,0.12)' : '#0d1117',
+      color: cur === o.val ? '#1DB954' : '#8b949e',
+      border: cur === o.val ? 'rgba(29,185,84,0.3)' : '#21262d'
+    }));
+    const sentimentChips = mkChips([{ label: 'All', val: 'all' }, { label: 'Positive', val: 'pos' }, { label: 'Negative', val: 'neg' }], S.evSentiment, 'evSentiment');
+    const platformChips = mkChips([{ label: 'All', val: 'all' }, { label: 'iOS', val: 'iOS' }, { label: 'Android', val: 'Android' }], S.evPlatform, 'evPlatform');
+    const countryChips = mkChips([{ label: 'All', val: 'all' }, { label: 'US', val: 'US' }, { label: 'UK', val: 'UK' }, { label: 'CA', val: 'CA' }, { label: 'AU', val: 'AU' }], S.evCountry, 'evCountry');
+
+    // ---------- METHODOLOGY ----------
+    const funnelData = [
+      { label: 'Collected', count: d.funnel.collected, removed: null },
+      { label: 'Deduplicated', count: d.funnel.deduplicated, removed: d.funnel.collected - d.funnel.deduplicated },
+      { label: 'English only', count: d.funnel.english, removed: d.funnel.deduplicated - d.funnel.english },
+      { label: 'Substantive (A+B)', count: d.funnel.substantive, removed: d.funnel.english - d.funnel.substantive },
+      { label: 'Discovery mentions', count: d.funnel.discoveryAll, removed: d.funnel.substantive - d.funnel.discoveryAll },
+      { label: 'Deep-coded', count: d.funnel.deepCoded, removed: d.funnel.discoveryAll - d.funnel.deepCoded }
+    ];
+    const maxFunnel = funnelData[0].count;
+    const funnelSteps = funnelData.map((s, i) => ({
+      label: s.label,
+      barWidth: (s.count / maxFunnel * 100) + '%',
+      barColor: i <= 2 ? '#30363d' : i <= 3 ? '#58a6ff' : '#1DB954',
+      countLabel: s.count.toLocaleString(),
+      removedLabel: s.removed == null ? '' : '−' + s.removed.toLocaleString()
+    }));
+    const limitations = d.limitations.map(l => ({ text: l }));
+
+    // ---------- EVALUATION LAYER ----------
+    const ev = d.evaluation;
+    const maxSamp = Math.max(...ev.sampling.bars.flatMap(b => [b.collected, b.store]));
+    const samplingBars = ev.sampling.bars.map(b => ({
+      label: b.stars + '★',
+      collectedH: (b.collected / maxSamp * 100) + '%',
+      storeH: (b.store / maxSamp * 100) + '%'
+    }));
+
+    const reconcileRows = ev.funnelReconcile.map(r => ({
+      step: r.step,
+      reason: r.reason,
+      equation: r.inN == null ? (r.outN.toLocaleString() + ' (start)') : (r.inN.toLocaleString() + ' in  =  ' + r.outN.toLocaleString() + ' out  +  ' + r.removed.toLocaleString() + ' removed')
+    }));
+
+    const fieldCards = ev.fieldIntegrity.map(f => ({
+      field: f.field,
+      validLabel: f.valid + '%',
+      valColor: f.valid >= 99 ? '#1DB954' : f.valid >= 98 ? '#d29922' : '#f85149',
+      quarantinedLabel: f.quarantined === 0 ? 'none quarantined' : f.quarantined + ' quarantined'
+    }));
+
+    const falseDrop = ev.languageCheck.falseDrop + '%';
+    const falseKeep = ev.languageCheck.falseKeep + '%';
+
+    // confusion matrix
+    const cf = ev.confusion;
+    const discoIdx = cf.labels.indexOf('Discovery');
+    const confLabels = cf.labels.map((l, i) => ({
+      short: l.length > 7 ? l.slice(0, 6) + '.' : l,
+      color: i === discoIdx ? '#1DB954' : '#8b949e',
+      weight: i === discoIdx ? '700' : '400'
+    }));
+    const confRows = cf.matrix.map((row, ri) => ({
+      label: cf.labels[ri],
+      color: ri === discoIdx ? '#1DB954' : '#8b949e',
+      weight: ri === discoIdx ? '700' : '400',
+      cells: row.map((val, ci) => {
+        const diag = ri === ci;
+        const inDisco = ri === discoIdx || ci === discoIdx;
+        const alpha = diag ? Math.min(0.18 + val / 100 * 0.82, 1) : (val / 100) * 0.9 + 0.04;
+        const bg = diag
+          ? 'rgba(29,185,84,' + alpha.toFixed(2) + ')'
+          : 'rgba(248,81,73,' + ((val / 100) * 0.55 + 0.03).toFixed(2) + ')';
+        return {
+          val: val,
+          bg: bg,
+          color: diag ? (val > 40 ? '#04130a' : '#1DB954') : (val > 6 ? '#f85149' : '#484f58'),
+          ring: (inDisco && !diag) || (diag && ri === discoIdx) ? '1px solid rgba(29,185,84,0.5)' : '1px solid transparent'
+        };
+      })
+    }));
+
+    const gc = ev.goldComposition;
+    const maxGold = Math.max(...gc.coverage.map(c => c.count));
+    const goldCoverage = gc.coverage.map(c => ({
+      cat: c.cat,
+      count: c.count,
+      barWidth: (c.count / maxGold * 100) + '%',
+      barColor: c.cat === 'Discovery' ? '#1DB954' : '#30363d',
+      color: c.cat === 'Discovery' ? '#1DB954' : '#8b949e',
+      weight: c.cat === 'Discovery' ? '600' : '400'
+    }));
+
+    return {
+      navItems,
+      showOverview: S.activeSection === 'overview',
+      showDiscovery: S.activeSection === 'discovery',
+      showEvidence: S.activeSection === 'evidence',
+      showMethodology: S.activeSection === 'methodology',
+
+      // overview
+      discoveryPct: '17.5%',
+      discoveryCount: d.discovery.totalMentions,
+      substantiveCount: d.funnel.substantive.toLocaleString(),
+      effectCI: '95% CI [−1.0, −0.6]',
+      effectNote: d.effect.note,
+      delightShare: d.delight.positiveShare + '%',
+      delightCount: d.delight.positiveCount.toLocaleString(),
+      categories, ratingDist,
+      baselineWidth: (d.baseline.avgRating / 5 * 100) + '%',
+      discoveryWidth: (d.discovery.avgRating / 5 * 100) + '%',
+      trendLinePoints, trendAreaPoints, trendDots, trendLabels,
+      trendLabel: d.trendDirection.label, trendSummary: d.trendDirection.summary,
+      delightByCategory, delightThemes, sentimentSplit, positiveDiscoveryThemes,
+
+      // deep dive
+      deepCodedCount: d.discovery.deepCoded,
+      isNarrative: S.deepView === 'narrative',
+      isFrequency: S.deepView === 'frequency',
+      showNarrative: () => this.setState({ deepView: 'narrative' }),
+      showFrequency: () => this.setState({ deepView: 'frequency' }),
+      narrativeTabBg: S.deepView === 'narrative' ? '#1DB954' : 'transparent',
+      narrativeTabColor: S.deepView === 'narrative' ? '#04130a' : '#8b949e',
+      frequencyTabBg: S.deepView === 'frequency' ? '#1DB954' : 'transparent',
+      frequencyTabColor: S.deepView === 'frequency' ? '#04130a' : '#8b949e',
+      behaviors, themes, findingThemes, recThemes,
+      findingEmerging: d.buckets.finding.emerging,
+      recEmerging: d.buckets.recs.emerging,
+      bridgeTotal: br.total,
+      chosenTotal: br.chosen.total, chosenLabel: br.chosen.label, chosenSub: br.chosen.sub, chosenFlow: br.chosen.flowsTo, chosenItems,
+      imposedTotal: br.imposed.total, imposedLabel: br.imposed.label, imposedSub: br.imposed.sub, imposedFlow: br.imposed.flowsTo, imposedItems,
+      unmetNeeds, segments,
+
+      // evidence
+      themeList, selectedThemeName, quotes, quoteCountLabel, noQuotes,
+      sentimentChips, platformChips, countryChips,
+
+      // methodology
+      funnelSteps, limitations,
+      windowJustification: d.window.justification,
+      toggleEval: () => this.setState({ evalOpen: !S.evalOpen }),
+      evalOpen: S.evalOpen,
+      evalChevron: S.evalOpen ? '▲' : '▼',
+      evalHint: S.evalOpen ? 'The seven quality checks, below.' : 'Opens the evaluation layer — seven checks you can see, not take on trust.',
+
+      // evaluation
+      samplingBars, samplingNote: ev.sampling.note,
+      reconcileRows,
+      fieldCards,
+      falseDrop, falseKeep,
+      langExample: ev.languageCheck.example, langVerdict: ev.languageCheck.exampleVerdict,
+      confLabels, confRows, discoveryAccuracy: cf.discoveryAccuracy + '%',
+      goldTotal: gc.total, borderlineCount: gc.borderline, easyCount: gc.easy,
+      borderlineWidth: (gc.borderline / gc.total * 100) + '%',
+      easyWidth: (gc.easy / gc.total * 100) + '%',
+      goldCoverage,
+      confidentShare: ev.abstention.confidentShare + '%', confidentAccuracy: ev.abstention.confidentAccuracy + '%',
+      abstainedShare: ev.abstention.abstainedShare + '%', abstainedAccuracy: ev.abstention.abstainedAccuracy + '%'
+    };
+  }
+
+  emptyState() {
+    return {
+      navItems: [], showOverview: true, showDiscovery: false, showEvidence: false, showMethodology: false,
+      discoveryPct: '—', discoveryCount: '—', substantiveCount: '—', effectCI: '', effectNote: '',
+      delightShare: '—', delightCount: '—', categories: [], ratingDist: [],
+      baselineWidth: '0%', discoveryWidth: '0%',
+      trendLinePoints: '', trendAreaPoints: '', trendDots: [], trendLabels: [], trendLabel: '', trendSummary: '',
+      delightByCategory: [], delightThemes: [], sentimentSplit: [], positiveDiscoveryThemes: [],
+      deepCodedCount: '—', isNarrative: true, isFrequency: false,
+      showNarrative: () => {}, showFrequency: () => {},
+      narrativeTabBg: '#1DB954', narrativeTabColor: '#04130a', frequencyTabBg: 'transparent', frequencyTabColor: '#8b949e',
+      behaviors: [], themes: [], findingThemes: [], recThemes: [], findingEmerging: 0, recEmerging: 0,
+      bridgeTotal: 0, chosenTotal: 0, chosenLabel: '', chosenSub: '', chosenFlow: '', chosenItems: [],
+      imposedTotal: 0, imposedLabel: '', imposedSub: '', imposedFlow: '', imposedItems: [],
+      unmetNeeds: [], segments: [],
+      themeList: [], selectedThemeName: '', quotes: [], quoteCountLabel: '', noQuotes: false,
+      sentimentChips: [], platformChips: [], countryChips: [],
+      funnelSteps: [], limitations: [], windowJustification: '',
+      toggleEval: () => {}, evalOpen: false, evalChevron: '▼', evalHint: '',
+      samplingBars: [], samplingNote: '', reconcileRows: [], fieldCards: [], falseDrop: '', falseKeep: '',
+      langExample: '', langVerdict: '', confLabels: [], confRows: [], discoveryAccuracy: '',
+      goldTotal: 0, borderlineCount: 0, easyCount: 0, borderlineWidth: '0%', easyWidth: '0%', goldCoverage: [],
+      confidentShare: '', confidentAccuracy: '', abstainedShare: '', abstainedAccuracy: ''
+    };
+  }
+}
+</script>
+</body>
+</html>

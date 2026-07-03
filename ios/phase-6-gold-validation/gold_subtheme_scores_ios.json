@@ -1,0 +1,236 @@
+{
+  "track": "ios",
+  "codebook": "v3",
+  "n_scored": 24,
+  "themeAccuracy_exactSet": 45.8,
+  "themeAccuracy_overlap": 58.3,
+  "primaryThemeAccuracy": 41.7,
+  "kappa_primary": 0.35,
+  "repetitionTypeAgreement": {
+    "n": 3,
+    "agreement": 100.0
+  },
+  "perThemeAccuracy": {
+    "dj": {
+      "acc": 100.0,
+      "n": 1
+    },
+    "emerging": {
+      "acc": 0.0,
+      "n": 1
+    },
+    "freegate": {
+      "acc": 42.9,
+      "n": 7
+    },
+    "love": {
+      "acc": 50.0,
+      "n": 6
+    },
+    "pushy": {
+      "acc": 25.0,
+      "n": 4
+    },
+    "repeat": {
+      "acc": 50.0,
+      "n": 2
+    },
+    "shuffle": {
+      "acc": 0.0,
+      "n": 1
+    },
+    "smartrec": {
+      "acc": 50.0,
+      "n": 2
+    }
+  },
+  "confusion": {
+    "labels": [
+      "repeat",
+      "shuffle",
+      "mismatch",
+      "pushy",
+      "smartrec",
+      "control",
+      "freegate",
+      "dj",
+      "newmusic",
+      "love",
+      "emerging"
+    ],
+    "matrix_counts": [
+      [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        3,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "freegateControlBoundary": {
+    "user_freegate_modelSaid": {
+      "newmusic": 1,
+      "shuffle": 2,
+      "freegate": 3,
+      "repeat": 1,
+      "control": 1,
+      "mismatch": 1
+    },
+    "user_control_modelSaid": {}
+  },
+  "codebookGaps_flagged": [
+    {
+      "gold_id": "13",
+      "missing": "AI slop - identifying between AI generated music and real artist music",
+      "user": "emerging",
+      "text": "Algorithm keeps giving me AI music. Please do something about this scourge. It is becoming incredibly horrific, especially for someone who pays premium and gets"
+    }
+  ],
+  "notDiscovery_userFlagged": [
+    {
+      "gold_id": "15",
+      "user_raw": "none ( related to updates )",
+      "model_themes": [
+        "control"
+      ],
+      "text": "I really hate this update were I can only have a limited amount of songs I can choose myself so when I go to play a song I wanna play it’s says I can’"
+    }
+  ]
+}
